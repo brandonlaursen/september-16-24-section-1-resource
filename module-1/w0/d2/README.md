@@ -1,10 +1,9 @@
 # `Week 0 Day 2`
-- Variables
 - Numbers
 - Booleans
 - Comparison Operators
 - Strings
-- Expressions
+- Expressions + Variables
 - Git Demo
 - Expressions Checkpoint
 
