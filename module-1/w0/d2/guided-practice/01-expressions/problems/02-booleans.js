@@ -1,6 +1,51 @@
 /*
 Let's practice playing with boolean expressions and operators in JavaScript!
+
+
+   Booleans
+    * Booleans can be used to represent true and false
+    * We can perform actions based on true/false
+
+  Logical operators
+    ! - not (bang)
+    && - and - multiplication - +
+    || - or  - addition - *
+
+  Order of operators
+    * not, and, or
+
+    * Logical operators return a boolean
+
 */
+// true = 1
+// false = 0
+//       true && false
+//          1 * 0 = 0
+console.log(1 && 0);
+
+//        true || false
+//          1 + 0 = 1
+console.log(1 || 0);
+
+console.log(false);
+console.log(true);
+console.log(!true);
+console.log(!false);
+console.log(!true || false);
+console.log(!true || !false);
+let result = !true || !false;
+// console.log('result: ',result);
+
+let demorgans = !(true && false);
+// let demorgans1 = !(
+//   function () {
+//     return true;
+//   } &&
+//   function () {
+//     return false;
+//   }
+// );
+// (!true || !false);
 
 // 1. Set the value of expression1 to be true or false
 
@@ -46,10 +91,9 @@ let predictExpression6;
 //    you think expression7 will evaluate to.
 let a = true;
 let b = false;
-let expression7 = (b || a) || (b && !a) && (!b || !a)
+let expression7 = b || a || (b && !a && (!b || !a));
 
 let predictExpression7;
-
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 module.exports = {
