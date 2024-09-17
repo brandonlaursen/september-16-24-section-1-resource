@@ -14,46 +14,46 @@ Let's practice playing with strings in JavaScript!
 
 */
 
-let string = 'this is a string';
-let string2 = "cats";
-let string3 = `dog`;
+// let string = 'this is a string';
+// let string2 = "cats";
+// let string3 = `dog`;
 
-// d o g undefined
-// 0 1 2   3
-console.log(string3);// dog
+// // d o g undefined
+// // 0 1 2   3
+// console.log(string3);// dog
 
-console.log(`dog`[0]);// d
-console.log(string3[0]);// d
-console.log(string3[1]);// o
-console.log(string3[2]);// g
-console.log('==>',string3[3]);
+// console.log(`dog`[0]);// d
+// console.log(string3[0]);// d
+// console.log(string3[1]);// o
+// console.log(string3[2]);// g
+// console.log('==>',string3[3]);
 
-// length property
-console.log(string3.length);// 3
+// // length property
+// console.log(string3.length);// 3
 
-// `dog`[2]
-console.log(string3[string3.length - 1]);// g
+// // `dog`[2]
+// console.log(string3[string3.length - 1]);// g
 
-// string3[2] = g
-console.log(string3[1 + 1]);// ???
+// // string3[2] = g
+// console.log(string3[1 + 1]);// ???
 
 
-let string4 = `Hello`;
-let name = 'brandon';
+// let string4 = `Hello`;
+// let name = 'brandon';
 
-let sentence = string4 + ' ' + name;
-console.log('==>',sentence);
+// let sentence = string4 + ' ' + name;
+// console.log('==>',sentence);
 
-let sentence1 = `Hello ${name} has ${string2}`
-// console.log(sentence1);
+// let sentence1 = `Hello ${name} has ${string2}`
+// // console.log(sentence1);
 
-let characters = 'abc';
-// console.log(characters.length)
+// let characters = 'abc';
+// // console.log(characters.length)
 
-console.log(characters.indexOf('a'));
+// console.log(characters.indexOf('a'));
 
-let result = characters.indexOf('a');
-console.log(result);
+// let result = characters.indexOf('a');
+// console.log(result);
 
 
 // 1. Set the value of expression1 to the concatenated string
@@ -61,45 +61,65 @@ console.log(result);
 //    strings.
 let str1A = 'Hello'
 let str1B = 'World!'
-let expression1;
+let expression1 = str1A + ' ' + str1B;
+// let expression1 = `${str1A} ${str1B}`;
+// let expression1 = str1A.concat(' ',str1B);
 
 console.log(expression1); //=> 'Hello World!'
 
 // 2. Set the value of expression2 to the first character of str2.
 let str2 = 'Hello';
-let expression2;
+// console.log(str2[0]);
+let expression2 = str2[0];
 
 console.log(expression2); //=> 'H'
 
 // 3. Set the value of expression3 to the index of 'o' in str3.
 let str3 = 'Hello';
-let expression3;
+let expression3 = str3.indexOf('o');
 
-console.log(expression3); //=> 4
+// console.log(expression3); //=> 4
 
 // 4. Predict what the value of expression4 will be when printed
 //    to the console. Set predictExpression4 to the value that
 //    you think expression4 will evaluate to.
 let expression4 = "Academy"[3];
 
-let predictExpression4;
+let predictExpression4 = 'd';
 
 // 5. Predict what the value of expression5 will be when printed
 //    to the console. Set predictExpression5 to the value that
 //    you think expression4 will evaluate to.
 let str5 = "BLUE";
+
+// str5.length - str5.indexOf("U");
+// 4 - 2 = 2
+// console.log('part 1',str5.length);// 4
+// console.log('part 2',str5.indexOf("U"));// 2
+
 let expression5 = str5.length - str5.indexOf("U");
 
-let predictExpression5;
+let predictExpression5 = 2;
 
 // 6. Predict what the value of expression6 will be when printed
 //    to the console. Set predictExpression6 to the value that
 //    you think expression6 will evaluate to.
 let str6A = 'start';
+// - 1 0 1 2
+//     e n d
 let str6B = 'end';
+
+// str6A.length - str6B[-1];
+// 5 - undefined
+// console.log(str6B[-1]);// undefined
+// console.log('==>',5 - undefined);
+
 let expression6 = str6A.length - str6B[-1];
 
-let predictExpression6;
+let predictExpression6 = NaN;
+
+// console.log(5 + undefined);// NaN
+// console.log(5 + 'hello');// 5hello
 
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
