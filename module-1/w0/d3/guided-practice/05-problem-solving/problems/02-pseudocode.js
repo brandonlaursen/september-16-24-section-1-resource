@@ -11,9 +11,40 @@ framework.
 Problem Statement:
 Given a number, write a function called within5Of100 to return true if the given
 number is within 5 of 100.
+
+  Understand the problem
+  - INPUT: a number -> 94
+  - OUTPUT: a boolean -> false
+  * 95 - 100 - 105
+  * we need just to check if the number is between 95 and 105
+
+  make a plan
+  1. define a function within5Of100 takes in num
+  2. store in var called boolean
+    use comparison operator to
+     check if num is greater than 95 - <=
+     check if num is less than 105 >=
+  3. return boolean
+
+  execute the plan
+  refactor
 */
 
-// console.log(within5Of100(94));  //=> false
+function within5Of100(num) {
+  // console.log(num);
+
+  // let boolean1 = num >= 95;
+  // console.log("boolean1:", boolean1);
+  // let boolean2 = num <= 105
+  // console.log("boolean2:", boolean2);
+
+  // let result = boolean1 && boolean2;
+  // console.log('==>',result);
+
+  return num >= 95 && num <= 105;
+};
+
+// console.log('return val',within5Of100(94));  //=> false
 // console.log(within5Of100(95));  //=> true
 // console.log(within5Of100(100)); //=> true
 // console.log(within5Of100(105)); //=> true
