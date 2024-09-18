@@ -26,13 +26,27 @@ function checkIfLastCharIsAnE(str) {
 
     // return lastChar === 'e';
     // str.toLowerCase()[(str.length - 1)] === 'e'
+    let var1 = 'hello world';
+
+    // let string1 = '';
+    // let string2 = new String('');
+
+    // console.log(result)
+
+    // let arr = [];
+    // let arr2 = new Array();
+
+    // console.log('==>',var1 === String('hello world'));
+    // console.log(typeof NaN);// object
+
+
     return str[str.length - 1].toLowerCase() === 'e';
 };
 
 
 console.log(checkIfLastCharIsAnE('stance')); //=> true
-console.log(checkIfLastCharIsAnE('FLOAT'));  //=> false
-console.log(checkIfLastCharIsAnE('PHONE'));  //=> true
+// console.log(checkIfLastCharIsAnE('FLOAT'));  //=> false
+// console.log(checkIfLastCharIsAnE('PHONE'));  //=> true
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 module.exports = checkIfLastCharIsAnE;
