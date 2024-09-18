@@ -47,6 +47,7 @@ function funnyStringConcat(string1, string2) {
 
   // return result;
   return string1.slice(0, 3) + string2.slice(-3);
+  // string[:3]
 }
 
 // console.log(funnyStringConcat("abc", "def")); //=> "abcdef"

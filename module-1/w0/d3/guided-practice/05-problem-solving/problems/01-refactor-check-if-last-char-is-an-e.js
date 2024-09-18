@@ -13,7 +13,7 @@ function checkIfLastCharIsAnE(str) {
     // console.log('1.',str);
     // 3. Find the last character of `str`.
     // stance[5]
-    let lastChar = str[str.length - 1];
+    // let lastChar = str[str.length - 1];
     // console.log('2.', lastChar);// e
 
     // 4. Transform the last character of `str` to a lowercase character
