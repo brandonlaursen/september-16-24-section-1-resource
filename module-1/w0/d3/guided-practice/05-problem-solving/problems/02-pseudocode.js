@@ -41,8 +41,14 @@ function within5Of100(num) {
   // let result = boolean1 && boolean2;
   // console.log('==>',result);
 
-  return num >= 95 && num <= 105;
-};
+  if (num >= 95 && num <= 105) {
+    return true;
+  } else {
+    return false;
+  }
+
+  // return num >= 95 && num <= 105;
+}
 
 // console.log('return val',within5Of100(94));  //=> false
 // console.log(within5Of100(95));  //=> true
@@ -52,7 +58,6 @@ function within5Of100(num) {
 
 // CHALLENGE: Can you design a function that would return true if a given number
 // is within X of another given number Y?
-
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 module.exports = within5Of100;
