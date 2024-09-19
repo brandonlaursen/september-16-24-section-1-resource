@@ -9,13 +9,21 @@ function myFunc(num) {
   //   return 'num is not greater than 5'
   // }
 
-  if (num >= 5) {
-    return "num is greater than 5";
-  }
+  // <condition> ? <if condition is true> : <if condition is false>
 
-  return "num is not greater than 5";
+  return num >= 5 ? 'num is greater than 5' : 'num is not greater than 5'
 
-  console.log("will we reach here");
+  let darkMode = true;
+
+  // className={ darkMode ? darkModeStyling : lightModeStyling};
+
+  // if (num >= 5) {
+  //   return "num is greater than 5";
+  // }
+
+  // return "num is not greater than 5";
+
+  // console.log("will we reach here");
 }
 
 // console.log(myFunc(5));
@@ -31,9 +39,14 @@ function myFunc2(num) {
   //   console.log("number is 10");
   // };
 
-  // if(num > 10) {
-  //   console.log("number is greater than 10");
-  // }
+  if (num > 10) return "number is greater than 10"
+  else if (num > 15) return "number is greater than 15"
+  else if (num < 10) return "number is less than 10"
+  else return "number is 10"
+
+
+  if(num > 10) console.log("number is greater than 10");
+
   // if(num > 15) {
   //   console.log("number is greater than 15");
   // }
