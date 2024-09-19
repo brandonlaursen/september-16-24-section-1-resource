@@ -117,3 +117,19 @@ console.log('return value:',myFunc2('cat'))
 // for(let i = 0; i < 100; i++){
 //   console.log(i);
 // }
+
+
+
+let i = 0;
+
+function func1(){
+  // i = 0;
+  console.log(i)
+}
+func1()
+
+function func2(){
+  // let i = 0;
+  console.log(i)
+}
+func2()
