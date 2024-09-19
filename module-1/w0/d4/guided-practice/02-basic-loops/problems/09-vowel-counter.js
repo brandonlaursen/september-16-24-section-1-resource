@@ -28,7 +28,7 @@ Vowels are the letters "a", "e", "i", "o", "u".
 //   }
 // }
 
-let vowels = 'aeiouAEIOU';
+// let vowels = 'aeiouAEIOU';
 // let vowels1 = ["a", "e", "i", "o", "u"];
 
 function countVowels(word){
@@ -37,7 +37,7 @@ function countVowels(word){
   for(let i = 0; i < word.length; i++) {
     let letter = word[i];
 
-    if(vowels.includes(letter)) {
+    if('aeiouAEIOU'.includes(letter)) {
       count++;
     }
     // for(let j = 0; j < vowels.length; j++) {
