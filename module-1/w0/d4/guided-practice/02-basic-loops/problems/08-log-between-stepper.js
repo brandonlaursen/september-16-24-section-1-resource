@@ -11,8 +11,28 @@ return anything.
 
 
 
+/*
+  start - min
+  stop - max
+  step - interval
+*/
+function logBetweenStepper(min, max, interval) {
+
+  // console.log(min, max, interval);// 5 9 1
+
+  // i -> min -> 5
+  // i <= max -> 9
+  // i += interval -> 1
+  for(let i = min; i <= max; i += interval) {
+    console.log(i);
+  };
+
+
+}
+
 
 // logBetweenStepper(5, 9, 1);
+logBetweenStepper(15, 90, 10);
 /* prints out:
 5
 6
