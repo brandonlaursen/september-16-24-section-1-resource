@@ -9,7 +9,8 @@ HINT: This function only needs to print using console.log it does not need to
 return anything.
 */
 
-// Your code here 
+
+
 
 // logBetweenStepper(5, 9, 1);
 /* prints out:

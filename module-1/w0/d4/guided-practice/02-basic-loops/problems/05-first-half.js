@@ -18,7 +18,7 @@ half of characters in the string parameter.
 
   0 1 2  | 3 4 5
   s p o    r t
-  5 / 2 = 2.5
+  5 / 2 = 2.5 -> 3
    * rounding down?
 
   make a plan
