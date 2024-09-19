@@ -32,7 +32,7 @@ function logBetweenStepper(min, max, interval) {
 
 
 // logBetweenStepper(5, 9, 1);
-logBetweenStepper(15, 90, 10);
+// logBetweenStepper(15, 90, 10);
 /* prints out:
 5
 6
