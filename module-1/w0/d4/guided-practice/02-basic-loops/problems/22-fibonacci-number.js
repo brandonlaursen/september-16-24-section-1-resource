@@ -30,24 +30,45 @@ sequence, we take the sum of the previous two numbers of the sequence.
 */
 
 
+// function fib1(num) {
+
+//   if(num <= 2) return 1;
+
+//   let prev = 1;
+//   let curr = 1;
+//   let temp;
+
+//   for(let i = 2; i < num; i++) {
+//     console.log('before change:', prev, curr)
+//     temp = prev + curr;// 2
+//     prev = curr;// 1
+//     curr = temp;// 2
+
+//     console.log("prev:", prev, "temp:", temp, "curr:", curr);
+//   };
+
+//   return temp;
+// }
+
+
+
 function fib(num) {
 
   if(num <= 2) return 1;
 
-  let prev = 1;
-  let curr = 1;
-  let temp;
 
-  for(let i = 2; i < num; i++) {
-    console.log('before change:', prev, curr)
-    temp = prev + curr;// 2
-    prev = curr;// 1
-    curr = temp;// 2
+  let sequence = [1,1]
 
-    console.log("prev:", prev, "temp:", temp, "curr:", curr);
+  for(let i = 1; i < num - 1; i++) {
+    let curr = sequence[i];
+    let prev = sequence[i - 1];
+    let nextNum = curr + prev;
+    sequence.push(nextNum);
+
   };
-
-  return temp;
+  // console.log(sequence);
+  return sequence[sequence.length - 1];
+  // return temp;
 }
 
 // console.log(fib(1));    // 1
@@ -56,7 +77,7 @@ function fib(num) {
 // console.log(fib(4));    // 3
 // console.log(fib(5));    // 5
 // console.log(fib(6));    // 8
-// console.log(fib(10));   // 55
+console.log(fib(10));   // 55
 // console.log(fib(11));   // 89
 // console.log(fib(12));   // 144
 
