@@ -41,3 +41,20 @@ Anytime you make changes and want to push those changes
 - `git add .`
 - `git commit -m ‘message’`
 - `git push`
+
+
+###  If you happen to commit the node_modules directory to your history before adding the .gitignore file, then we can do this to remove it from our commit history:
+
+  1. run `git rm -r --cached node_modules`
+  2. add `.gitignore` file with node_modules in it like the example above if you haven't yet
+  3. run `git add .`
+  4. run `git commit -m "message here"`
+  5. run `git push`
+
+
+
+### Do not work on the files at the same time without pulling or you will end up with a git conflict
+
+To git rid of staged changes
+1. `git reset --hard && git pull`
+1. `git stash && git pull`
