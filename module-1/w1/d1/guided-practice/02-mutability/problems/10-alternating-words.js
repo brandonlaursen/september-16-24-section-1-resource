@@ -16,6 +16,10 @@ output: [ 'BELKA', 'strelka', 'LAIKA', 'dezik' ]
 * all words at even indexes are upper cased
 * all words at odd indexes are lowercase cased
 
+  push - anytime you need add an element to end of an array
+  join - turn an array into a string
+  slice - to make copy - slice off a section of an array, does not mutate original
+
 */
 
 function alternatingWords(words) {
