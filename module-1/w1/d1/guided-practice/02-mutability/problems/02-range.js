@@ -21,19 +21,30 @@ an empty array.
     * push i into the array
   4. return array
 
+
+    define arr to push values into
+  start i at 3
+  loop as long as i is less than or equal to the max - 10
+  increment by 1 each time
+  loop starting from the min number up to the max number including it an increments of 1
+  pushing current number to end of arr
 */
 
 
 function range(min, max) {
 
   // console.log(min, max);
+  // define arr to push values into
   let arr = [];
 
   // start i at 3
   // loop as long as i is less than or equal to the max - 10
   // increment by 1 each time
+  // loop starting from the min number up to the max number including it an increments of 1
   for(let i = min; i <= max; i++ ){
     // console.log(i);
+
+    // pushing current number to end of arr
     arr.push(i);
     // console.log(arr);
   }
