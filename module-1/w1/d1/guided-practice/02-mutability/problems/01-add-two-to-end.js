@@ -4,7 +4,7 @@ should be an array. The function should add the last two parameters to the end
 of the array as elements. It should return the original array mutated.
 */
 
-// Your code here 
+// Your code here
 
 // let arr1 = ['a', 'b'];
 // let added1 = addTwoToEnd(arr1, 'c', 'd');
