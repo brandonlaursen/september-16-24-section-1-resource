@@ -34,41 +34,73 @@ Vowels are the letters "a", "e", "i", "o", "u".
 */
 
 let vowels = ["a", "e", "i", "o", "u"];
-function removeLastVowel(string, num) {
+function removeLastVowel(string) {
   // console.log(string);// bootcamp
   let wordArr = string.split("");
   // console.log(wordArr); // ["b", "o", "o", "t", "c", "a", "m", "p"];
 
-  let count = 0;
-  let result = string;
+
   for(let i = wordArr.length - 1; i >= 0; i--){
     let letter = wordArr[i];
     // console.log(letter);
-    if(vowels.includes(letter) && count < num){
+    if(vowels.includes(letter)){
       // console.log(letter, i);
       // 5
       wordArr.splice(i, 1);
-      result = wordArr.join('');
-      console.log("result:", result);
+      let result = wordArr.join('');
+      // console.log("result:", result);
 
-      count++;
       // console.log(result, wordArr);
 
       // console.log(result);
-      // return wordArr.join('');
+      return wordArr.join('');
       // break;
     }
   }
 
-  return result;
-  // return string;
+  return string;
   // return wordArr.join('');
 }
 
-console.log(removeLastVowel("bootcamp", 1)); // 'bootcmp'
+
+// * remove up to num vowels from end
+// let vowels = ["a", "e", "i", "o", "u"];
+// function removeLastVowel(string, num) {
+//   // console.log(string);// bootcamp
+//   let wordArr = string.split("");
+//   // console.log(wordArr); // ["b", "o", "o", "t", "c", "a", "m", "p"];
+
+//   let count = 0;
+//   let result = string;
+//   for(let i = wordArr.length - 1; i >= 0; i--){
+//     let letter = wordArr[i];
+//     // console.log(letter);
+//     if(vowels.includes(letter) && count < num){
+//       // console.log(letter, i);
+//       // 5
+//       wordArr.splice(i, 1);
+//       result = wordArr.join('');
+//       console.log("result:", result);
+
+//       count++;
+//       // console.log(result, wordArr);
+
+//       // console.log(result);
+//       // return wordArr.join('');
+//       // break;
+//     }
+//   }
+
+//   return result;
+//   // return string;
+//   // return wordArr.join('');
+// }
+
+
+console.log(removeLastVowel("bootcamp")); // 'bootcmp'
 // console.log(removeLastVowel('better')); // 'bettr'
 // console.log(removeLastVowel('graph')); // 'grph'
-console.log(removeLastVowel('thy')); // 'thy'
+// console.log(removeLastVowel('thy')); // 'thy'
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 module.exports = removeLastVowel;
