@@ -17,9 +17,15 @@ let pairsMaker = function(arr) {
     for(let j = i + 1; j < arr.length; j++){
       let ele2 = arr[j];
       // console.log(" ele2:", ele2);
-      pairs.push([ele1, ele2]);
+      // pairs.push([ele1, ele2]);
+      let pair = [];
+      pair.push(ele1, ele2);
+      // console.log(pair);
+      pairs.push(pair);
+
       // console.log(pairs);
     }
+    // break;
   };
   return pairs;
 };
