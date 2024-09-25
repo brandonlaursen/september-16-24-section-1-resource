@@ -56,8 +56,21 @@ for(let i = 0; i < matrix.length; i++) {
     // let ele = subArr[j];
       // let ele = matrix[i][j];
       let ele = matrix[j][i];
-      console.log(i, j, 'ele:', ele)
+      // console.log(i, j, 'ele:', ele)
     // console.log('j:',j, 'ele: ',ele);
 
+  }
+}
+
+let words = ['the', 'string', 'is', 'cool']
+
+for(let i = 0; i < words.length; i++){
+  // console.log('i',i);
+  let word = words[i];
+  console.log(word);
+
+  for(let j = 0; j < word.length; j++){
+    let letter = word[j];
+    console.log(letter);
   }
 }
