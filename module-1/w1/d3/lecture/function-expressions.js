@@ -48,6 +48,7 @@ let callback2 = () => "callback";
 
 function higherOrder(callback) {
   // let callback = () => "callback"
+  // callback();
 }
 
 // higherOrder(callback);
@@ -64,3 +65,20 @@ higherOrder(() => {
 });
 
 higherOrder(() => "callback");
+
+'string';
+12;
+[1,2,3]
+// function(){}
+
+
+// call the function
+let name = function(){
+
+};
+
+// name();
+
+(function(){
+  console.log('iffe')
+})();
