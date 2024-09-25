@@ -4,15 +4,34 @@ function should return a 2D array where the subarrays represent unique pairs of
 element from the input array.
 */
 
-// Your code here 
 
-// console.log(pairsMaker(["a", "b", "c", "d"]));
-// //=> [ [ 'a', 'b' ],
-// //     [ 'a', 'c' ],
-// //     [ 'a', 'd' ],
-// //     [ 'b', 'c' ],
-// //     [ 'b', 'd' ],
-// //     [ 'c', 'd' ] ]
+
+let pairsMaker = function(arr) {
+
+  let pairs = [];
+  for(let i  = 0 ; i < arr.length; i++){
+    let ele1 = arr[i];
+    // console.log("ele1:", ele1);
+    // console.log(ele1);
+
+    for(let j = i + 1; j < arr.length; j++){
+      let ele2 = arr[j];
+      // console.log(" ele2:", ele2);
+      pairs.push([ele1, ele2]);
+      // console.log(pairs);
+    }
+  };
+  return pairs;
+};
+
+
+console.log(pairsMaker(["a", "b", "c", "d"]));
+//=> [ [ 'a', 'b' ],
+//     [ 'a', 'c' ],
+//     [ 'a', 'd' ],
+//     [ 'b', 'c' ],
+//     [ 'b', 'd' ],
+//     [ 'c', 'd' ] ]
 
 // console.log(pairsMaker(["Rosemary", "Alex", "Connor"]));
 // //=> [ [ 'Rosemary', 'Alex' ],
