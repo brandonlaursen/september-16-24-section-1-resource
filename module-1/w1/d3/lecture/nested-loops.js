@@ -53,7 +53,10 @@ for(let i = 0; i < matrix.length; i++) {
   // O(n)
   for(let j = 0; j < subArr.length; j++) {
     // matrix[i][j]
-    let ele = subArr[j];
+    // let ele = subArr[j];
+      // let ele = matrix[i][j];
+      let ele = matrix[j][i];
+      console.log(i, j, 'ele:', ele)
     // console.log('j:',j, 'ele: ',ele);
 
   }
