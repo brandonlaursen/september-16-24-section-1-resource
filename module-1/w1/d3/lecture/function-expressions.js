@@ -31,5 +31,36 @@ let myFunc2 = function () {
 // console.log(myFunc2); // [Function: myFunc2]
 // console.log(myFunc2()); // hello from myFunc2
 
-
 // ! learn next week
+// arrow functions
+
+let callback = function () {
+  return "callback";
+};
+
+let callback1 = () => {
+  let string = 'callback'
+  return string;
+}
+
+// implicit
+let callback2 = () => "callback";
+
+function higherOrder(callback) {
+  // let callback = () => "callback"
+}
+
+// higherOrder(callback);
+let num = 2;
+higherOrder(num);
+higherOrder(2);
+
+higherOrder(function () {
+  return "callback";
+});
+
+higherOrder(() => {
+  return "callback";
+});
+
+higherOrder(() => "callback");
