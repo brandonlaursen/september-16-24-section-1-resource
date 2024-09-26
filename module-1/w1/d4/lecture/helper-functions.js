@@ -19,37 +19,76 @@
 // when a function is returned it is removed from the stack
 // whatever is at the top of the call stack is what js will focus on
 // first in last out - last in first out
-function timesTwo(num) {
-  console.log("4: entering times two");
-  return num * 2;
+// function timesTwo(num) {
+//   console.log("4: entering times two");
+//   return num * 2;
+// }
+
+// // console.log(timesTwo(10));//20
+// // let returnValTimes = timesTwo(10);
+// // console.log(returnValTimes);// 20
+
+// function math(numbers) {
+//   console.log("2: entering into math");
+//   // let numTimesTwo = timesTwo(12);
+//   // console.log(numTimesTwo);// 24
+
+//   console.log("3: before we call timesTwo");
+//   let numTimesTwo = timesTwo(12);
+//   console.log("5: after calling times two");
+
+
+//   return numTimesTwo;
+//   // for(let i = 0; i < numbers.length; i++){
+//   //   let number = numbers[i];
+//   //   console.log('3: before we call timesTwo')
+//   //   let numTimesTwo = timesTwo(number);
+//   //   console.log('5: after calling times two')
+//   // }
+// }
+
+// console.log("1: before math call");
+// console.log("6: return value of math", math([1, 2, 3, 4, 5]));
+// console.log('7: after the math call');
+
+// // console.log('===>',console.log('hello'));//
+// console['log']('hello');
+
+
+
+
+
+// function higherOrder(){
+//   myFunc();
+// }
+
+// higherOrder()
+
+// myFunc();
+
+// function myFunc(){
+
+//   console.log('hello from my func');
+// }
+
+
+// myFunc();
+
+
+// console.log(string);//
+
+// let string = 'brandon';
+
+// myFunc();
+
+
+function higherOrder(){
+  myFunc();
 }
 
-// console.log(timesTwo(10));//20
-// let returnValTimes = timesTwo(10);
-// console.log(returnValTimes);// 20
 
-function math(numbers) {
-  console.log("2: entering into math");
-  // let numTimesTwo = timesTwo(12);
-  // console.log(numTimesTwo);// 24
+higherOrder()
 
-  console.log("3: before we call timesTwo");
-  let numTimesTwo = timesTwo(12);
-  console.log("5: after calling times two");
-
-
-  return numTimesTwo;
-  // for(let i = 0; i < numbers.length; i++){
-  //   let number = numbers[i];
-  //   console.log('3: before we call timesTwo')
-  //   let numTimesTwo = timesTwo(number);
-  //   console.log('5: after calling times two')
-  // }
+let myFunc = function(){
+  console.log('hello from my func');
 }
-
-console.log("1: before math call");
-console.log("6: return value of math", math([1, 2, 3, 4, 5]));
-console.log('7: after the math call');
-
-// console.log('===>',console.log('hello'));//
-console['log']('hello');
