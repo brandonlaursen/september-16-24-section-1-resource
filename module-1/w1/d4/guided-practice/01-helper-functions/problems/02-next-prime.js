@@ -27,15 +27,25 @@ function isPrime(num) {
 
 function nextPrime(num) {
 
-  // console.log(num);
-  let result = isPrime(12);
-  console.log("result:", result);
 
+
+
+  // let isNextPrime = false;
+
+  // while (!isNextPrime) {
+  //   num++;
+
+  //   console.log(num);
+  //   if (isPrime(num)) isNextPrime = true;
+  // }
+
+  // return num;
+
+  num++;
   while(!isPrime(num)) {
     num++;
 
-    // console.log(num);
-    // if(isPrime(num)) return num;
+    console.log(num);
   };
 
 
@@ -44,10 +54,10 @@ function nextPrime(num) {
 
 
 // console.log(nextPrime(2)); // 3
-// console.log(nextPrime(3)); // 5
+console.log(nextPrime(3)); // 5
 // console.log(nextPrime(7)); // 11
 // console.log(nextPrime(8)); // 11
-console.log(nextPrime(20)); // 23
+// console.log(nextPrime(20)); // 23
 // console.log(nextPrime(97)); // 101
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
