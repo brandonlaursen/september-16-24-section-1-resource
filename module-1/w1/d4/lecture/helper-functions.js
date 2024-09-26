@@ -82,13 +82,47 @@
 // myFunc();
 
 
-function higherOrder(){
-  myFunc();
-}
+// function higherOrder(){
+//   myFunc();
+// }
 
 
-higherOrder()
+// higherOrder()
 
-let myFunc = function(){
-  console.log('hello from my func');
-}
+// let myFunc = function(){
+//   console.log('hello from my func');
+// }
+
+
+
+
+//  console.log(number);// undefined
+
+// hoisting - accessing a variable before been defined
+
+// console.log(string);// string error!
+// let string = 'string';
+// const string1 = 'string'
+
+// var string2 = undefined
+console.log(string2);
+var string2 = 'string';
+
+
+// var vs let
+// var can be hoisted because it has a default value of undefined
+// var can be reinitialized
+// var can reassigned
+// var is function scoped
+
+// let
+// let cannot be hoisted because it does not a have a default value
+// let cannot be reinitialized
+// let can reassigned
+// let is block scoped
+
+// const
+// const cannot be hoisted because it does not a have a default value
+// const cannot be reinitialized
+// const cannot reassigned
+// const is block scoped
