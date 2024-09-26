@@ -9,7 +9,7 @@ contains at least three different vowels. Use the hasVowel function as a helper
 function.
 */
 
-// Your code here 
+// Your code here
 
 // console.log(hasThreeVowels("delicious"));     //  true
 // console.log(hasThreeVowels("bootcamp prep")); //  true
