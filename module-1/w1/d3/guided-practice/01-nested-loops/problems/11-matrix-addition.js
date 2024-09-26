@@ -7,16 +7,16 @@ arguments.
 To add matrices, we add the values at the same positions.
 */
 
-// Your code here 
+// Your code here
 
-// let matrixA = [
-//   [2, 5],
-//   [4, 7],
-// ];
-// let matrixB = [
-//   [9, 1],
-//   [3, 0],
-// ];
+let matrixA = [
+  [2, 5],
+  [4, 7],
+];
+let matrixB = [
+  [9, 1],
+  [3, 0],
+];
 
 // let matrixC = [
 //   [-1, 0],
@@ -33,6 +33,29 @@ To add matrices, we add the values at the same positions.
 //   [12, 4],
 //   [6, 3],
 // ];
+
+function matrixAddition(matrix1, matrix2) {
+  // console.log(matrix1, matrix2);
+  // [ [ 2, 5 ], [ 4, 7 ] ]
+  // [ [ 9, 1 ], [ 3, 0 ] ]
+  // [ [11,  6], [7,  7]  ]
+  let result = [];
+  for (let i = 0; i < matrix1.length; i++) {
+    let subArr1 = matrix1[i];
+    // console.log("subArr1:", subArr1);
+    let subArr2 = matrix2[i];
+    // console.log("subArr2:", subArr2);
+    if(subArr2[0] === undefined ) {
+
+    }
+    let sum1 = subArr1[0] + subArr2[0];
+    let sum2 = subArr1[1] + subArr2[1];
+    result.push([sum1, sum2] )
+
+  };
+
+  return result;
+}
 
 // console.log(matrixAddition(matrixA, matrixB)); // [[11, 6], [7, 7]]
 // console.log(matrixAddition(matrixA, matrixC)); // [[1, 5], [4, 6]]
