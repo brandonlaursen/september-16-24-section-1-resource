@@ -16,7 +16,7 @@ function isPrime(num) {
   if(num < 2) return false;
 
   // Math.sqrt(100);
-  // 10 
+  // 10
   for(let i = 2; i < num; i++){
     console.log(i);
     if(num % i === 0) {
@@ -30,7 +30,7 @@ function isPrime(num) {
 
 
 // console.log(isPrime(2)); // => true
-console.log(isPrime(10)); // => false
+// console.log(isPrime(10)); // => false
 // console.log(isPrime(11)); // => true
 // console.log(isPrime(9)); // => false
 // console.log(isPrime(2017)); // => true
