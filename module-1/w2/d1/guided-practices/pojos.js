@@ -101,5 +101,48 @@ function myFunc(key) {
 
 
 
-// myFunc('name')
+// myFunc('name');
 // myFunc('age');
+
+
+let obj = {
+
+}
+// console.log(obj)
+
+obj.firstName = 'brandon';
+obj['lastName'] = 'laursen';
+
+// console.log(obj)
+
+obj.firstName = 'BRANDON';
+
+// console.log(obj);
+
+
+delete obj.lastName;
+
+// console.log(obj);
+
+
+// {
+// }
+obj.name = obj.firstName;
+
+// console.log(obj)
+
+delete obj.firstName;
+
+// console.log(obj);
+
+// let arrObj = {
+//   '0': undefined,
+//   '1': undefined,
+//   '2': undefined,
+// }
+
+
+
+
+
+
