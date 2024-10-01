@@ -1,13 +1,11 @@
 # `Week 2 Day 1`
 
-- Assessment
+- Morning Review
 - Arrow Functions Demo
 - POJO Demo
 - Plain Old JavaScript Object (POJO) Practice
 - Iterating through Objects Demo
 - Iterating Through Objects Practice
-
-## `Assessment (1h49m)`
 
 ## `Arrow Functions`
 
