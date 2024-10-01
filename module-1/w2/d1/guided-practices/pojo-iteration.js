@@ -82,6 +82,37 @@ let entries = Object.entries(cat);
 console.log(entries);
 // [ [ 'name', 'pumpkin' ], [ 'age', 2 ], [ 'cute', true ] ]
 
-for(let [key, value] of Object.entries(cat)){
-  console.log(key, value);
+// for(let [key, value] of Object.entries(cat)){
+//   console.log(key, value);
+// }
+
+
+
+// for of
+console.log('=======')
+let arr = ['true', false, 12];
+
+
+
+for(let ele of arr) {
+  console.log(ele);
+}
+
+
+for(let i = 0; i < arr.length; i++) {
+
+  let ele = arr[i];
+  // console.log(ele);
+}
+
+/*
+
+  {
+  '0': 'a'
+  }
+*/
+let string = 'abcdef';
+
+for(let char of string){
+  console.log(char);
 }
