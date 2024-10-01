@@ -2,8 +2,20 @@
 Write a function called `myMap` that behaves like the `Array.map`
 method.
 */
+function myMap(array, callback){
+    // console.log(array, callback);
 
-// Your code here 
+    let result = [];
+
+    for(let personObj of array) {
+      // console.log(personObj);
+      let bool = callback(personObj);
+      // console.log("bool:", bool);
+      result.push(bool);
+    };
+
+    return result;
+}
 
 const friends = [
   {
@@ -24,11 +36,15 @@ const friends = [
   }
 ];
 
+// let res = friends.map((personObj) => personObj.yearsOfFriendship > 5)
+// console.log(res);
+
 const goodFriendsOrNot = myMap(
   friends,
   friend => friend.yearsOfFriendship > 5
 ); // [false, false, true, true]
 
+console.log(goodFriendsOrNot);
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 
