@@ -11,10 +11,19 @@ const obj = {
   green: "hexagon"
 }
 
-// Your code here 
 
-// console.log(arrRest);   // [1, "two", "3"]
-// console.log(arrSpread); // [1, "two", "3"]
+// rest is to the left
+const [...arrRest] = arr;
+
+// spread to the right
+const arrSpread = [...arr];
+
+console.log(arrRest);   // [1, "two", "3"]
+console.log(arrSpread); // [1, "two", "3"]
+
+
+const { ...objRest } = obj;
+const objSpread = {...obj};
 
 // console.log(objRest);   // { red: "circle", blue: "square", green: "hexagon" }
 // console.log(objSpread); // { red: "circle", blue: "square", green: "hexagon" }
