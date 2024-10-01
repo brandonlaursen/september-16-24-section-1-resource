@@ -36,11 +36,16 @@ const friends = [
 const allFriendsStartWithA = myEvery(friends, friend => {
   return friend.name.startsWith('A');
 }); // false
+
 console.log("allFriendsStartWithA:", allFriendsStartWithA);
 
-const allFriendsUnder10Years = myEvery(friends, friend => {
+//
+
+function myFunc(friend) {
   return friend.yearsOfFriendship < 10;
-}); // true
+}
+
+const allFriendsUnder10Years = myEvery(friends, myFunc); // true
 
 console.log("allFriendsUnder10Years:", allFriendsUnder10Years);
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/

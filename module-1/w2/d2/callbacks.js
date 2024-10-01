@@ -41,6 +41,10 @@ let double = (num) => num * 2;
 function doubleNumbers(numbers, callback) {
   console.log(numbers, callback); // [ 1, 2, 3 ] [Function: double]
 
+  if(callback === undefined){
+    
+  }
+
   // console.log(callback(5));// 10
   let result = []
 
@@ -54,13 +58,14 @@ function doubleNumbers(numbers, callback) {
   return result
 }
 
+doubleNumbers([1,2,3], double)
+doubleNumbers([1,2,3])
 
-
-let array = [1,2,3];
-// [ 1 2 3 ]
-let res1 = array.map( (num) => num * 2 ) ;
-let res2 = array.map( double ) ;
-console.log(res1, res2);
+// let array = [1,2,3];
+// // [ 1 2 3 ]
+// let res1 = array.map( (num) => num * 2 ) ;
+// let res2 = array.map( double ) ;
+// console.log(res1, res2);
 // (1) => 2
 // (2) => 4
 // (3) => 6
