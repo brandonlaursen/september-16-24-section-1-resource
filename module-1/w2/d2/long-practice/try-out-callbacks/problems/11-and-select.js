@@ -29,9 +29,19 @@ console.log(andSelect(['ants', 'APPLES', 'ART', 'BACON', 'arm'], isUpperCase,  s
 *******************************************************************************/
 
 function andSelect(array, cb1, cb2) {
-  // Your code here 
+  // Your code here
 }
 
+// let isEven = function (n) {
+//   return n % 2 === 0;
+// };
+
+// let isPositive = function (n) {
+//   return n > 0;
+// };
+
+// console.log(andSelect([-3, 8, 7, 11, 6, 12, -4], isEven, isPositive));
+// [ 8, 6, 12 ]
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
   module.exports = andSelect;
