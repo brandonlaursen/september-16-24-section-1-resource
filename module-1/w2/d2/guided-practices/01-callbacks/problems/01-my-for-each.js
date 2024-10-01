@@ -3,30 +3,53 @@ Write a function called `myForEach` that behaves like the `Array.forEach`
 method.
 */
 
-// Your code here 
+
+function myForEach(array, callback) {
+  // console.log(array, callback);
+
+  for(let personObj of array) {
+    // console.log(personObj);
+    // console.log(personObj.name);
+    // console.log(callback(personObj));
+    callback(personObj)
+  }
+}
 
 const friends = [
   {
     name: "Albert",
-    yearsOfFriendship: 3
+    yearsOfFriendship: 3,
   },
   {
     name: "Angela",
-    yearsOfFriendship: 2
+    yearsOfFriendship: 2,
   },
   {
     name: "Freddy",
-    yearsOfFriendship: 8
+    yearsOfFriendship: 8,
   },
   {
     name: "Agatha",
-    yearsOfFriendship: 6
-  }
+    yearsOfFriendship: 6,
+  },
 ];
 
-myForEach(friends, friend => {
+// friends.forEach((personObj) =>   console.log(personObj.name + ": " + personObj.yearsOfFriendship + " years"))
+
+myForEach(friends, (friend) => {
   console.log(friend.name + ": " + friend.yearsOfFriendship + " years");
 });
+
+// function callback(obj) {
+//   console.log(obj.name + ": " + obj.yearsOfFriendship + " years");
+// }
+
+// callback({
+//   name: "Agatha",
+//   yearsOfFriendship: 6,
+// });
+
+
 
 /* prints:
 Albert: 3 years
