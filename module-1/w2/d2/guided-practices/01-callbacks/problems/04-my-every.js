@@ -3,7 +3,16 @@ Write a function called `myEvery` that behaves like the `Array.every`
 method.
 */
 
-// Your code here 
+function myEvery(array, callback){
+
+  for(let personObj of array) {
+    // console.log(personObj);
+    // console.log(callback(personObj))
+    if(!callback(personObj)) return false;
+  };
+
+  return true;
+};
 
 const friends = [
   {
@@ -27,11 +36,13 @@ const friends = [
 const allFriendsStartWithA = myEvery(friends, friend => {
   return friend.name.startsWith('A');
 }); // false
+console.log("allFriendsStartWithA:", allFriendsStartWithA);
 
 const allFriendsUnder10Years = myEvery(friends, friend => {
   return friend.yearsOfFriendship < 10;
 }); // true
 
+console.log("allFriendsUnder10Years:", allFriendsUnder10Years);
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 
 try {

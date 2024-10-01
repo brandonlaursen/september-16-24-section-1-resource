@@ -3,6 +3,10 @@ Write a function called `myFilter` that behaves like the `Array.filter`
 method.
 */
 
+// for(let i = 0; i < 5; i++){
+//   console.log(<h1>hello<h1/>);
+// }
+
 function myFilter(array, callback){
 
   let result = [];
