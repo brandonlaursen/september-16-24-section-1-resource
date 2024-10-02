@@ -60,7 +60,15 @@ const threeVowelFriend = friends.find((object) => {
   return count >= 3;
 });
 
-console.log(threeVowelFriend); // { name: 'Angela', yearsOfFriendship: 2 }
+// console.log(threeVowelFriend); // { name: 'Angela', yearsOfFriendship: 2 }
+
+let name = 'brandon'
+let lastName = 'laursen';
+
+[name, lastName] = [lastName, name];
+
+console.log(name, lastName)
+// (() => console.log(true))();
 
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
