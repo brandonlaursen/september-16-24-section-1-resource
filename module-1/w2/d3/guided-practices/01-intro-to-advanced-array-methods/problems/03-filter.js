@@ -24,8 +24,26 @@ const friends = [
   }
 ];
 
+function myFunc(friends) {
 
-const filteredFriends;
+
+  let filteredFriends = friends.filter(   (personObj) => {
+    // if(personObj.name[0] === 'A' && personObj.yearsOfFriendship > 5){
+    //   return true;
+    // } else {
+    //   return false;
+    // }
+
+    return personObj.name[0] === 'A' && personObj.yearsOfFriendship > 5;
+  });
+
+  // console.log(filteredFriends);// [ { name: 'Agatha', yearsOfFriendship: 6 } ]
+  return filteredFriends;
+
+}
+
+
+console.log('==>',myFunc(friends));
 
 // console.log(filteredFriends); // [ { name: "Agatha", yearsOfFriendship: 6 } ]
 
