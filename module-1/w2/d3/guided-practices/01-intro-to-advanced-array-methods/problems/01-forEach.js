@@ -25,7 +25,22 @@ const friends = [
   }
 ];
 
-// Your code here 
+for(let i = 0; i < friends.length; i++){
+  let personObj = friends[i];
+  // console.log(personObj);
+  // console.log(`${personObj.name}: ${personObj.yearsOfFriendship} years`);
+}
+
+
+friends.forEach(    (personObj) => {
+  console.log(`${personObj.name}: ${personObj.yearsOfFriendship} years`);
+});
+
+// names.forEach((name, i, names) => console.log(name, i, names));
+// names.forEach((element, index, array) => console.log(element, index, array));
+
+
+// Your code here
 
 /*
 Should print:
