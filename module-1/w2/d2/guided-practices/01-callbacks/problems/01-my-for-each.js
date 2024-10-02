@@ -34,6 +34,10 @@ const friends = [
   },
 ];
 
+
+
+
+
 // friends.forEach((personObj) =>   console.log(personObj.name + ": " + personObj.yearsOfFriendship + " years"))
 
 myForEach(friends, (friend) => {

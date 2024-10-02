@@ -102,5 +102,15 @@ const result = words.filter(function(word){
   // return false;
 });
 
-console.log(result);
+// console.log(result);
 // Expected output: Array ["exuberant", "destruction", "present"]
+
+
+// find
+
+const array3 = [5, 12, 8, 130, 44];
+
+const found = array3.find((element) => element > 10);
+
+console.log(found);
+// Expected output: 12
