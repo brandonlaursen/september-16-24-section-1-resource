@@ -23,10 +23,44 @@ const friends = [
   }
 ];
 
-// Hint: create an array of vowels to use in your solution.
-const threeVowelFriend;
+let threeOrMoreVowels = (object) => {
 
-// console.log(threeVowelFriend); // [ { name: 'Angela', yearsOfFriendship: 2 } ]
+  let vowels = 'aeiouAEIOU';
+  let name = object.name;
+  let count = 0;
+
+  for(let letter of name) {
+
+    if(vowels.includes(letter)) {
+      count++;
+    }
+  };
+
+  return count >= 3;
+};
+
+// console.log(threeOrMoreVowels({ name: 'Angela', yearsOfFriendship: 2 }));
+
+// Hint: create an array of vowels to use in your solution.
+// const threeVowelFriend = friends.find(threeOrMoreVowels);
+
+const threeVowelFriend = friends.find((object) => {
+
+  let vowels = 'aeiouAEIOU';
+  let name = object.name;
+  let count = 0;
+
+  for(let letter of name) {
+    // console.log(letter,'======')
+    if(vowels.includes(letter)) {
+      count++;
+    }
+  };
+
+  return count >= 3;
+});
+
+console.log(threeVowelFriend); // { name: 'Angela', yearsOfFriendship: 2 }
 
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/

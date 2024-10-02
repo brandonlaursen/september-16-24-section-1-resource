@@ -34,7 +34,7 @@ function myFunc(friends) {
     //   return false;
     // }
 
-    return personObj.name[0] === 'A' && personObj.yearsOfFriendship > 5;
+    return personObj.name[0] === 'A' && personObj.yearsOfFriendship > 2;
   });
 
   // console.log(filteredFriends);// [ { name: 'Agatha', yearsOfFriendship: 6 } ]
