@@ -112,5 +112,5 @@ const array3 = [5, 12, 8, 130, 44];
 
 const found = array3.find((element) => element > 10);
 
-console.log(found);
+// console.log(found);
 // Expected output: 12
