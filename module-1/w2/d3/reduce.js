@@ -73,12 +73,61 @@ console.log("result5:", result5);
 
 // object
 let result6 = ["a", "b", "b", "c", "d", "e", "e"].reduce((obj, letter) => {
+
+  // console.log(obj)
     if(obj[letter]) {
       obj[letter] ++;
     } else {
       obj[letter] = 1
     };
-    console.log(obj);
     return obj;
-}, {})
+}, []);
 
+console.log("result6:", result6);
+// [ a: 1, b: 2, c: 1, d: 1, e: 2 ]
+
+// console.log('======')
+// console.log('==>',result6[0]);
+
+for(let i = 0; i < result6.length; i++) {
+  console.log(result6[i]);
+}
+// console.log('hello')
+// for(let ele of result6) {
+//   console.log(ele);
+// }
+// console.log('first')
+
+let arr = [];
+arr['a'] = 1;
+// console.log(arr);
+// console.log(arr[0]);
+console.log('===>',arr['a']);
+
+let obj = {...result6};
+// console.log(obj);
+
+
+// function myFunc(){
+
+// }
+
+
+// // console.log(myFunc);
+// // myFunc['a'] = 1;
+// // console.log(myFunc);
+
+
+// class Object {
+//   constructor(){
+//   }
+
+//   sayHello (){
+
+//   }
+// }
+
+
+// class Array extends Object {
+
+// }
