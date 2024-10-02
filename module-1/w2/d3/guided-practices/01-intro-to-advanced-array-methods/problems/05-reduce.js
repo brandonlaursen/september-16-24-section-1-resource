@@ -24,9 +24,12 @@ const friends = [
 ];
 
 // Hint: create an array of vowels to use in your solution.
-const totalYears;
+const totalYears = friends.reduce((sum, personObj) => {
+  sum += personObj.yearsOfFriendship;
+  return sum;
+} , 0)
 
-// console.log(totalYears); // 19
+console.log(totalYears); // 19
 
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
