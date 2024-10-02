@@ -64,7 +64,7 @@ const array2 = [1, 4, 9, 16];
 
 const map1 = array2.map(function doubled(x, i , array) {
 
-  console.log(x, i , array);
+  // console.log(x, i , array);
   return x * 2
   // return true;
 
@@ -75,8 +75,32 @@ const map1 = array2.map(function doubled(x, i , array) {
 // Expected output: Array [2, 8, 18, 32]
 
 
-const words = ['an', 'array', 'of ', 'words'];
+// const words = ['an', 'array', 'of ', 'words'];
 
 
-let upperCased = words.map((word) => word.toUpperCase());
+// let upperCased = words.map((word) => word.toUpperCase());
 // console.log("upperCased:", upperCased);// [ 'AN', 'ARRAY', 'OF ', 'WORDS' ]
+
+
+// const words = ['an', 'array', 'of ', 'words'];
+
+
+
+
+const words = ['spray', 'elite', 'exuberant', 'destruction', 'present'];
+
+// result = ['exuberant', 'destruction', 'present' ]
+// i - 0 - 'spray' - ('spray') => 'spray'.length > 6
+// i - 1 - 'spray' - ('elite') => 'elite'.length > 6
+// i - 2 - 'spray' - ('exuberant') => 'exuberant.length > 6
+// i - 3 - 'destruction' - ('destruction') => 'exuberant.length > 6
+// i - 4 - 'present' - ('present') => 'present'.length > 6
+// i 5
+const result = words.filter(function(word){
+
+  return word.length > 15
+  // return false;
+});
+
+console.log(result);
+// Expected output: Array ["exuberant", "destruction", "present"]
