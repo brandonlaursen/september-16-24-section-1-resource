@@ -66,14 +66,49 @@ lexicalEnv:
 // elephantCollector -> <referenceA>
 // elephants -> <referenceB>
 // eleParade1 -> <referenceC>
-let elephantParade1 = elephantCollector();
-console.log(elephantParade1('zunesha')); // [ 'dumbo', 'zunesha' ]
-console.log(elephantParade1('brandon')); // [ 'dumbo', 'zunesha' ]
+// let elephantParade1 = elephantCollector();
+// console.log(elephantParade1('zunesha')); // [ 'dumbo', 'zunesha' ]
+// console.log(elephantParade1('brandon')); // [ 'dumbo', 'zunesha' ]
 
-// elephantCollector -> <referenceA>
-// elephants -> <referenceD>
-// elephantParade2 => <referenceE>
-let elephantParade2 = elephantCollector();
-console.log(elephantParade2('funkfreed'));// [ 'dumbo', 'funkfreed' ]
-console.log(elephantParade2('horton'));
-// console.log('==>',elephantCollector()());
+// // elephantCollector -> <referenceA>
+// // elephants -> <referenceD>
+// // elephantParade2 => <referenceE>
+// let elephantParade2 = elephantCollector();
+// console.log(elephantParade2('funkfreed'));// [ 'dumbo', 'funkfreed' ]
+// console.log(elephantParade2('horton'));
+// // console.log('==>',elephantCollector()());
+
+// call stack
+// whenever a function is called, it pushed to the top of the stack
+// whenever a function returns, it is popped off the stack
+// js will focus on whatever at the top of the call stack
+
+
+
+function createCounter(){
+
+  let count = 0;
+
+  return function() {
+    count++;
+    return count;
+  }
+
+}
+
+// console.log(createCounter);// [Function: createCounter]
+// console.log(createCounter());// [Function (anonymous)]
+
+let counter1 = createCounter();
+// console.log("counter1:", counter1);// [Function (anonymous)]
+
+console.log(counter1());// 1
+console.log(counter1());// 2
+console.log(counter1());// 3
+
+// console.log('======')
+
+// let counter2 = createCounter();
+// console.log(counter2());// 1
+// console.log(counter2());// 2
+// console.log(counter2());// 3
