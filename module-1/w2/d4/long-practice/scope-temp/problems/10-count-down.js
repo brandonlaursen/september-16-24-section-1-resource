@@ -27,8 +27,19 @@ Example 4:
   console.log(threeDays()); // prints "Happy New Year!"
 
 ***********************************************************************/
+function countDownTimer(){
 
-// Your code here 
+  function inner(){
+    count--;
+    if(count === 0) {
+      return count;
+    } else {
+      return inner;
+    }
+  };
+
+  return inner;
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

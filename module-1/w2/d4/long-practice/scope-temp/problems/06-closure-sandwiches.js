@@ -17,7 +17,22 @@ sandwich2("pb") // => "One sandwich with tomato and pb"
 
 ***********************************************************************/
 
-// Your code here 
+function sandwichMaker() {
+
+
+ 
+
+  // return inner();
+  // return inner;
+}
+
+
+let sandwich = sandwichMaker(); // => returns a function
+console.log("sandwich:", sandwich);
+// sandwich("spinach") // => "One sandwich with tomato and spinach"
+// sandwich("jelly") // => "One sandwich with tomato and spinach and jelly"
+// sandwich("bread") // => "One sandwich with tomato and spinach and jelly and bread"
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
