@@ -1,22 +1,31 @@
 /*
 Implement the `sundaeOrder()` function. This function should return another
-function that accepts a string (`topping`) to add to the sundae. 
+function that accepts a string (`topping`) to add to the sundae.
 A sundae will start off with a default "A bowl of ice cream with hot fudge".
 Each incoming topping should be separated by "and". The function skeleton has
 already been created for you - your job is to fill in the missing logic.
 
 Look at the example test cases to see how this function is invoked:
+
+    string = {
+    }
 */
 
 function sundaeOrder() {
-  // Your code here 
+
+  let string =  "A bowl of ice cream with hot fudge";
 
   return function (topping) {
-    // Your code here 
+    // // "A bowl of ice cream with hot fudge and nuts and caramel";
+    string += ' and ' + topping;
+    return string;
   };
+
 }
 
+
 // const sundae1 = sundaeOrder(); // => returns a function
+// // console.log("sundae1:", sundae1);//  [Function (anonymous)]
 // console.log(sundae1("nuts")) // => "A bowl of ice cream with hot fudge and nuts"
 // console.log(sundae1("caramel")) // => "A bowl of ice cream with hot fudge and nuts and caramel"
 
