@@ -36,39 +36,43 @@ function elephantCollector() {
 // console.log(elephantCollector());// [Function: inner]
 
 /*
-lexicalEnv: elephantCollector:{
-      elephants: ['dumbo']
+
+lexicalEnv:
+
+  elephantCollector[<referenceA>]:{
+      elephants
       inner
     }
 
-  lexicalEnv1: {
-    elephantCollector1:{
-      elephants: ['dumbo']
-      inner: {
-        name: 'arg1',
-        elephants: ['dumbo', 'zunesha']
+    elephantParade1[<referenceC>]:{
+      elephants: <referenceB> -> ['dumbo']
+      name: 'zunesha',
+      elephants: <referenceB>['dumbo', 'zunesha']
       }
     }
-  }
 
-  lexicalEnv2: {
-    elephantCollector2:{
-      elephants: ['dumbo']
+
+    elephantParade2[<referenceE>]:{
+      elephants: <referenceD>['dumbo']
       inner: {
-        name: 'arg1',
-        elephants: ['dumbo','funkfreed']
+      name: 'funkfreed',
+      elephants: <referenceD>['dumbo','funkfreed']
       }
     }
-  }
 
 
 */
-// eleParade1 -> <ref1>
+//
+// elephantCollector -> <referenceA>
+// elephants -> <referenceB>
+// eleParade1 -> <referenceC>
 let elephantParade1 = elephantCollector();
 console.log(elephantParade1('zunesha')); // [ 'dumbo', 'zunesha' ]
 console.log(elephantParade1('brandon')); // [ 'dumbo', 'zunesha' ]
 
-// eleParade2 -> <ref1>
+// elephantCollector -> <referenceA>
+// elephants -> <referenceD>
+// elephantParade2 => <referenceE>
 let elephantParade2 = elephantCollector();
 console.log(elephantParade2('funkfreed'));// [ 'dumbo', 'funkfreed' ]
 console.log(elephantParade2('horton'));
