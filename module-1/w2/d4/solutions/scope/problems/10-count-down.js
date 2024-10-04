@@ -28,32 +28,20 @@ Example 4:
 
 ***********************************************************************/
 
-
-function countDownTimer(num){
-  if(num === 0) return "Happy New Year!";
-
-
-  return function count(){
+//!!START
+function countDownTimer(num) {
+  if (num === 0) return "Happy New Year!";
+  const _count = () => {
     num -= 1;
-    if(num === 0) return "Happy New Year!"
-    else {
-      return count;
-      // return countDownTimer;
+    if (num <= 0) {
+      return "Happy New Year!";
+    } else {
+      return _count;
     }
-  }
-};
-
-// Example 1:
-  // console.log(countDownTimer(0)); // prints "Happy New Year!"
-
-// Example 2:
-  // let oneDay = countDownTimer(1); // returns a function
-  // console.log(oneDay()); // prints "Happy New Year!"
-
-// // Example 3:
-  // let twoDays = countDownTimer(2); // returns a function
-  // console.log(twoDays()); // returns a function
-  // console.log(twoDays()); // prints "Happy New Year!"
+  };
+  return _count;
+}
+//!!END
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

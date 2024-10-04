@@ -13,40 +13,23 @@ function returned by recVolume should continue to return the original volume.
 
 ***********************************************************************/
 
-// 5
+//!!START
 function recVolume(height) {
-  let dimensions = [height];// [5, 4, 3]
-
-  // 145
-  return function count(num){
-    // console.log(num);// 4
-    if(dimensions.length < 3) dimensions.push(num);
-    if(dimensions.length === 3) {
-      // [5, 4, 3] = 60
-      const [height, length, width] = dimensions;
-      return height * length * width;
-    } else {
-      return function(){}
+  let dimensions = [height];
+  const _measure = (num) => {
+    if (dimensions.length < 3) {
+      dimensions.push(num);
     }
-  }
+    if (dimensions.length === 3) {
+      let sum = dimensions.reduce((acc, el) => (acc *= el));
+      return sum;
+    } else {
+      return _measure;
+    }
+  };
+  return _measure;
 }
-
-
-
-// Example 1:
-let table1 = recVolume(5); // returns a function
-// console.log("table1:", table1);
-let returnOfTable1 = table1(4); // returns a function
-// console.log("returnOfTable1:", returnOfTable1);
-console.log(table1(3)); // prints 60
-// console.log(table1(145)); // STILL prints 60
-// console.log(table1(145)); // STILL prints 60
-
-// Example 3:
-// let table2 = recVolume(3); // returns a function
-// table2(2); // returns a function
-// console.log(table2(1)); // prints 6
-// console.log(table2(75)); // STILL prints 6
+//!!END
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
