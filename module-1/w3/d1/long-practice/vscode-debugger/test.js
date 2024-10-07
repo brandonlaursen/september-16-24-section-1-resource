@@ -25,8 +25,8 @@ function baz(word) { // define function baz that accepts param word
 
 let names = ['brandon', 'charles', 'Anabel', 'trevor'];
 for(let i = 0; i < names.length; i++){
-  console.log(names[i]);
-  // debugger;
+  // console.log(names[i]);
+  debugger;
 }
 
 
@@ -54,4 +54,5 @@ function test() {
   // debugger;
 }
 
-test();
+// test();
+
