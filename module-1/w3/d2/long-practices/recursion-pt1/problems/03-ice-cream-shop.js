@@ -12,15 +12,33 @@ iceCreamShop(['moose tracks'], 'moose tracks'); // true
 iceCreamShop([], 'honey lavender'); // false
 ***********************************************************************/
 
-
 function iceCreamShop(flavors, favorite) {
-  // Your code here 
+    // Base
+    if (flavors.length === 0) return false;
+
+    // Recursive Step
+    const currentFlavor = flavors.pop();
+
+    if (currentFlavor === favorite) return true;
+
+    // Recursive Case
+    return iceCreamShop(flavors, favorite);
 }
 
+// ? ---------------------------------------------------------------------------
+// * ----- One line
+// ? ---------------------------------------------------------------------------
+
+// const iceCreamShop = (flavors, favorite) =>
+//     !flavors.length
+//         ? false
+//         : flavors.pop() === favorite
+//         ? true
+//         : iceCreamShop(flavors, favorite);
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
-  module.exports = iceCreamShop;
+    module.exports = iceCreamShop;
 } catch (e) {
-  module.exports = null;
+    module.exports = null;
 }

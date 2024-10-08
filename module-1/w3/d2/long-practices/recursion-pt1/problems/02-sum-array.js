@@ -10,13 +10,38 @@ sumArray([0, 1, -3]); //  -2
 sumArray([1, 2, 3, 4, 5]); // 15
 ***********************************************************************/
 
+// ! ---------------------------------------------------------------------------
+// * ----- Using .pop()
+// ! ---------------------------------------------------------------------------
+
 function sumArray(arr) {
-  // Your code here 
+    // Base
+    if (!arr.length) return 0;
+
+    // Recurse + Step
+    // [1, 2, 3]
+    //          3    +         [1, 2]
+    return arr.pop() + sumArray(arr);
 }
-  
+
+// ! ---------------------------------------------------------------------------
+// * ----- Using .slice()
+// ! ---------------------------------------------------------------------------
+
+// function sumArray(arr) {
+//     if (arr.length === 0) return 0;
+//     return arr[0] + sumArray(arr.slice(1));
+// }
+
+// ? ---------------------------------------------------------------------------
+// * ----- One line
+// ? ---------------------------------------------------------------------------
+
+// const sumArray = (arr) => (!arr.length ? 0 : arr.pop() + sumArray(arr));
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
-  module.exports = sumArray;
+    module.exports = sumArray;
 } catch (e) {
-  module.exports = null;
+    module.exports = null;
 }

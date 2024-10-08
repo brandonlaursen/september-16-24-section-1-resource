@@ -10,15 +10,41 @@ range(3, 4); // [3]
 range(7, 6); // []
 ***********************************************************************/
 
-
 function range(start, end) {
-  // Your code here 
+    // Base
+    if (start >= end) return [];
+
+    // Recursive case + step
+    return [start, ...range(start + 1, end)];
+    // [ 1 , ...range(2, 5) ]
+    // [ 2 , ...range(3, 5) ]
+    // [ 3 , ...range(4, 5) ]
+    // [ 4 , ...range(5, 5) ]
+    // []
+    //! Now popping off the stack!
+    // [ 4 , ...[] ] => [ 4 ]
+    // [ 3 , ...[ 4 ] ] =>
+    // [ 2 , ...[ 3 , 4 ] ] => [ 2 , 3 , 4 ]
+    // [ 1 , ...[ 2 , 3 , 4 ] ] => [ 1 , 2 , 3 , 4 ]
 }
 
+// ! ---------------------------------------------------------------------------
+// * ----- Default param
+// ! ---------------------------------------------------------------------------
+
+// function range(start, end, finalArray = []) {
+//     // Base
+//     if (start >= end) return finalArray;
+
+//     finalArray.push(start);
+
+//     // Recursive case + step
+//     return range(start + 1, end, finalArray);
+// }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
-  module.exports = range;
+    module.exports = range;
 } catch (e) {
-  module.exports = null;
+    module.exports = null;
 }
