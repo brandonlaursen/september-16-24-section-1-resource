@@ -20,10 +20,38 @@ exponent(2, -2); // 1/4 (or 0.25)
 exponent(5, 5); // 3125
 ***********************************************************************/
 
-function exponent(num, power) {
-    // Your code here 
-}
-  
+// num * exponent(), power - 1 each time
+// When power === 1, return num
+
+// function exponent(num, power) {
+//     // Base Case
+//     debugger;
+//     if (power === 1) return num;
+
+//     if (power < 0) {
+//         // power *= -1;
+//         power = Math.abs(power);
+//         return 1 / (num * exponent(num, power - 1));
+//     }
+
+//     // Recursive Step & Case
+//     else return num * exponent(num, power - 1);
+// }
+
+// // console.log(exponent(3, 2)); // 9
+// console.log(exponent(2, -2)); // 1/4 (or 0.25)
+
+// ? ---------------------------------------------------------------------------
+// * ----- One line
+// ? ---------------------------------------------------------------------------
+
+const exponent = (num, power) =>
+    power === 0
+        ? 1
+        : power > 0
+        ? num * exponent(num, --power)
+        : (1 / num) * exponent(num, ++power);
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
     module.exports = exponent;

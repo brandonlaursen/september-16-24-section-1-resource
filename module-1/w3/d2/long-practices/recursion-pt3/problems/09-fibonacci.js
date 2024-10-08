@@ -19,10 +19,38 @@ fibonacci(4); // 3
 fibonacci(10); // 55
 ***********************************************************************/
 
+// 7;
+
+// 1 + 6;
+
+// 1 + 5;
+
+// 1 + 4;
+
+// 1 + 3;
+
+// 1 + 2;
+
+// 1 + 1;
+
+/**
+ * fib(1) = 1
+ * fib(2) = 1
+ * fib(3) = fib(2) + fib(1)
+ * fib(4) = fib(3) + fib(2)
+ * fib(5) = fib(4) + fib(3)
+ */
+
 function fibonacci(n) {
-  // Your code here 
+    if (n === 1 || n === 2) return 1;
+    return fibonacci(n - 1) + fibonacci(n - 2);
 }
-  
+
+// function fib(n) {
+//     if (n == 0 || n == 1) return n;
+
+//     return fib(n - 1) + fib(n - 2);
+// }
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 module.exports = fibonacci;
-  
