@@ -21,7 +21,7 @@ describe('dynamicSlice()', () => {
     assert.deepEqual(slicer([0, 1, 2, 3]), [2, 3]);
     assert.deepEqual(slicer(['kittens', 'puppies', 'cats', 'dogs']), ['cats', 'dogs']);
 
-    const slicer2 = dynamicSlice(-10, 2);
-    assert.deepEqual(slicer2([99, 40, 131, 8]), [99, 40]);
+    const slicer3 = dynamicSlice(-10, 2);
+    assert.deepEqual(slicer3([99, 40, 131, 8]), [99, 40]);
   });
 });

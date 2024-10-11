@@ -25,9 +25,33 @@ console.log(preserveFunc2('boolean', 'string', 'undefined')); // prints [ undefi
 
 */
 
+// function preserveTypes(array) {
+//     return (...types) => array.filter((el) => types.includes(typeof el));
+// }
+
 function preserveTypes(array) {
-    // Your code here 
+    // Your code here
+
+    return (inner = (...str) => {
+        return [
+            ...array.filter(function (el) {
+                //  console.log(str,typeof el);
+                // console.log(str.indexOf(String(typeof el)));
+                if (str.indexOf(String(typeof el)) > -1) {
+                    return String(el);
+                }
+            }),
+        ];
+    });
 }
+
+// //! Stripped down version
+// function preserveTypes(array) {
+//     // Your code here
+
+//     return (...typeArray) =>
+//         array.filter((el) => typeArray.indexOf(typeof el) > -1);
+// }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {

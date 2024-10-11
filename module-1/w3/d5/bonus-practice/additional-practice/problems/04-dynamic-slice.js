@@ -20,7 +20,35 @@
 */
 
 function dynamicSlice(start, end) {
-    // Your code here 
+    const innerFunc = (
+        arr,
+        finalArr = [],
+        startPoint = start,
+        endPoint = end
+    ) => {
+        // finalArray
+
+        if (startPoint < 0) {
+            startPoint = 0;
+        }
+        if (endPoint >= arr.length) {
+            endPoint = arr.length;
+        }
+
+        // Base Case
+        if (startPoint >= endPoint) return finalArr;
+
+        finalArr.push(arr[startPoint]);
+
+        // Recursive Step
+        startPoint++;
+
+        // Recursive Case
+
+        return innerFunc(arr, finalArr, startPoint, endPoint);
+    };
+
+    return innerFunc;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

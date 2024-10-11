@@ -8,9 +8,29 @@
     console.log(evenNumberRange(2, 0)); // prints []
 */
 
-function evenNumberRange(num1, num2) {
-    // Your code here 
+function evenNumberRange(small, large) {
+    if (small % 2 !== 0) {
+        small++;
+    }
+
+    // Base Case
+    if (small > large) return [];
+
+    const newSmall = small + 2;
+    return [small, ...evenNumberRange(newSmall, large)];
 }
+
+// function evenNumberRange(small, large) {
+//     if (large % 2 !== 0) {
+//         large--;
+//     }
+
+//     // Base Case
+//     if (small > large) return [];
+
+//     const newLarge = large - 2;
+//     return [...evenNumberRange(small, newLarge), large];
+// }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {

@@ -14,12 +14,39 @@
         pause for 400ms
 */
 
-function r2d2Speaks(code) {
-    // Your code here 
-}
+const soundBoard = {
+    0: ['beep', 400],
+    1: ['boop', 800],
+};
 
-let code = [0, 1, 1, 0];
-r2d2Speaks(code);
+const r2d2Speaks = (code) => {
+    if (!code.length) return 'r2d2 shut up please for the love of god';
+
+    const [sound, delay] = soundBoard[code.shift()];
+
+    console.log(sound);
+
+    setTimeout(() => r2d2Speaks(code), delay);
+};
+
+// let code = [0, 1, 1, 0];
+// r2d2Speaks(code);
+
+// function r2d2Speaks(code) {
+//     if (!code.length) return 'r2d2 shut up please for the love of god';
+
+//     const val = code.shift();
+//     let delay;
+//     if (val === 0) {
+//         console.log('beep');
+//         delay = 400;
+//     } else {
+//         console.log('boop');
+//         delay = 800;
+//     }
+
+//     setTimeout(r2d2Speaks, delay, code);
+// }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
@@ -27,4 +54,3 @@ try {
 } catch (e) {
     module.exports = null;
 }
-

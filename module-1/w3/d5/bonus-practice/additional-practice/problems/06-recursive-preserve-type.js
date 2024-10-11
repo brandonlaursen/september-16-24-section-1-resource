@@ -26,9 +26,33 @@ Note: the mocha tests do not test that your solution is implemented recursively.
 However, for bonus points try to solve it both with recursion and iteration.
 */
 
-function recursivePreserveType(array) {
-    // Your code here 
-}
+// function recursivePreserveType(array) {
+//     const inner = (type, index = 0) => {
+//         if (array.length === index) return [];
+
+//         const el = array[index];
+
+//         if (typeof el === type) {
+//             return [el, ...inner(type, ++index)];
+//         } else {
+//             return [...inner(type, ++index)];
+//         }
+//     };
+
+//     return inner;
+// }
+
+// //! Using the closure creator within the inner function
+// function recursivePreserveType(arr) {
+//     return function preserve(type) {
+//         if (arr.length === 0) return [];
+//         if (typeof arr[0] === type)
+//             return [arr[0], ...recursivePreserveType(arr.slice(1))(type)];
+//         else return [...recursivePreserveType(arr.slice(1))(type)];
+//     };
+// }
+
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
