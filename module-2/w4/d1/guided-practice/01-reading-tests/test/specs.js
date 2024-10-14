@@ -2,8 +2,14 @@ const chai = require("chai");
 const expect = chai.expect;
 const { isFive, isOdd, myRange } = require("../funcs");
 
+
+// describe is used to possibly describe a specific functions test specs
 describe("isFive(num)", () => {
+
+
+  // string to explain what the test is testing for
   it("should return true if the num is 5 otherwise false", () => {
+
     const num1 = 5;
 
     const actual1 = isFive(num1); // should be true
@@ -73,6 +79,9 @@ describe("myRange(min, max, step)", () => {
       const expected2 = [];
 
       expect(actual1).to.eql(expected1);
+      expect(myRange(0, 5)).to.eql([0, 1, 2, 3, 4, 5]);
+
+
       expect(actual2).to.eql(expected2);
     });
   });
