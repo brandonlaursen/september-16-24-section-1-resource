@@ -75,7 +75,7 @@ const orc = {
   name: "Azog",
 };
 
-// * Function.bind(context)
+// * Function.bind(this)
 // * binding sayName function to dragon object
 let dragonNameFunc = dragon.sayName.bind(dragon);
 // dragonNameFunc();// Hello my name is Smaug
