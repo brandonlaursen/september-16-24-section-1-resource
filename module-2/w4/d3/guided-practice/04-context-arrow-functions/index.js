@@ -9,4 +9,6 @@ function greetAfterNameChange(changeName, newName) {
 }
 
 greetAfterNameChange(michelle.changeName, 'Elle');
+
+// greetAfterNameChange(michelle.changeName.bind(michelle), 'Elle');
   // should print out: Hi my name is Elle
