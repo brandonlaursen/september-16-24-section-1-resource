@@ -38,8 +38,8 @@ function sayName(name) {
 
 // tests
 try {
-  sayName("Alex");
   sayName(1);
+  sayName("Alex");
 } catch(e) {
   console.log(e.message);
 }
