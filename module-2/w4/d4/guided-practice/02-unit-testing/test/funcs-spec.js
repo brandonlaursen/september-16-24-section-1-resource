@@ -7,6 +7,7 @@ describe("isFive(num)", () => {
     const num1 = 5;
 
     const actual1 = isFive(num1); // should be true
+    console.log("actual1 =====>:", actual1);
 
     expect(actual1).to.be.true;
 
@@ -74,6 +75,8 @@ describe("myRange(min, max, step)", () => {
 
       expect(actual1).to.eql(expected1);
       expect(actual2).to.eql(expected2);
+
+      // expect(myRange(6, 3)).to.eql([]);
     });
   });
 
