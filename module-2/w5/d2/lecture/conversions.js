@@ -114,4 +114,39 @@ console.log(parseInt(11001010, 2));// 202
 let decimal = parseInt(11001010, 2);
 
 // decimal to binary
-console.log(decimal.toString(2));// 11001010
+// console.log(decimal.toString(2));// 11001010
+
+
+/*
+
+  The digits are 0-9
+  A, B, C, D, E and F representing 10, 11, 12, 13, 14 and 15, respectively
+  A - 10
+  B - 11
+  C - 12
+  D - 13
+  E - 14
+  F - 15
+
+OxA1 -> 161
+Index -   1    0
+b^i  -    16^1   16^0
+ value    10      1
+b^i * v   160     1
+   160 + 1  = 161
+
+
+   161 -> 0xA1
+
+   161 / 16 = 10 r1
+   10 / 16  = 0  r10 <- left most
+
+    0xA1
+
+
+*/
+
+const decimal1 = parseInt('0xA1', 16);
+// console.log("decimal1:", decimal1);
+
+console.log(decimal1.toString(16));
