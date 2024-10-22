@@ -9,32 +9,52 @@ Consult documentation on how to utilize the following methods:
 
 /* Base 2 to base 16 */
 function binaryToHexadecimal(blob) {
-  // Your code here 
+  // Your code here
+
+  const decimal = parseInt(blob.substring(2), 2);
+  // console.log("decimal:", decimal);
+
+  return `0x${decimal.toString(16)}`;
+
 }
 
 /* Base 16 to base 2 */
 function hexadecimalToBinary(blob) {
-  // Your code here 
+  // Your code here
+
+  const decimal = parseInt(blob, 16);
+  return `0b${decimal.toString(2)}`;
 }
 
 /* Base 10 to ASCII */
 function decimalToAscii(blob) {
-  // Your code here 
+
+  return String.fromCharCode(blob);
 }
 
 /* Base 2 to ASCII */
 function binaryToAscii(blob) {
-  // Your code here 
+  // Your code here
+
+  return String.fromCharCode(blob);
 }
 
 /* Base 16 to ASCII */
 function hexadecimalToAscii(blob) {
-  // Your code here 
+  // Your code here
+  return String.fromCharCode(blob);
 }
 
 /* ASCII to base 10 */
 function asciiToDecimal(blob) {
-  // Your code here 
+  // Your code here
+
+  let res = [];
+  for(let i = 0; i < blob.length; i++){
+    res.push(blob.charCodeAt(i));
+  };
+
+  return res;
 }
 
 // console.log('Binary to hexadecimal:')
@@ -62,9 +82,9 @@ function asciiToDecimal(blob) {
 // console.log(hexadecimalToAscii('0x63'))  // 'c'
 // console.log('')
 
-// console.log('ASCII to decimal:')
-// console.log(asciiToDecimal('HELLO'))   // [ 72, 69, 76, 76, 79 ]
-// console.log(asciiToDecimal('world!'))  // [ 119, 111, 114, 108, 100, 33 ]
+console.log('ASCII to decimal:')
+console.log(asciiToDecimal('HELLO'))   // [ 72, 69, 76, 76, 79 ]
+console.log(asciiToDecimal('world!'))  // [ 119, 111, 114, 108, 100, 33 ]
 
 module.exports = {
   binaryToHexadecimal,
