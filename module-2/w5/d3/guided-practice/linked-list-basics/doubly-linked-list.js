@@ -51,13 +51,32 @@ class DoublyLinkedList {
 
 
     // create a newNode
-    // increment length
-    // if the length list is empty
-      // set the head and tail to the newNode
+    const newNode = new DoublyLinkedListNode(val);
+
+    if(this.length >= 1) {
+
+      // point the newNode prev at the current tail
+      newNode.prev = this.tail;
+
+      
     // if there is length
       // point our current tail next at the newNode
-      // point the newNode prev at the current tail
+      this.tail.next = newNode;
+
+
       // point the tail pointer at the new node
+      this.tail = newNode;
+
+    } else {
+    // if the length list is empty
+      // set the head and tail to the newNode
+      this.head = newNode;
+      this.tail = newNode;
+    }
+
+
+    // increment length
+    this.length++;
 
   }
 
