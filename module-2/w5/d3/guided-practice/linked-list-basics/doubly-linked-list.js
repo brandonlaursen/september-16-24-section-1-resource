@@ -21,14 +21,30 @@ class DoublyLinkedList {
   addToHead(val) {
 
     // create a newNode
-    // increment length
+    const newNode = new DoublyLinkedListNode(val);
+
     // check if the dll has length
-    // if the length list is empty
-      // set the and head tail to the newNode
+    if(this.length >= 1) {
     // if there is length
       // point our current head prev pointer at the newNode
+      this.head.prev = newNode
+
       // newNode next pointer at the current head
+      newNode.next = this.head;
+
       // point the head pointer at the newNode
+      this.head = newNode;
+
+    } else {
+    // if the length list is empty
+      // set the and head tail to the newNode
+      this.head = newNode;
+      this.tail = newNode;
+    }
+
+      // increment length
+      this.length++;
+
   }
 
   addToTail(val) {
