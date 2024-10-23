@@ -1,3 +1,6 @@
+
+
+
 class DoublyLinkedListNode {
   constructor(val) {
     this.value = val;
@@ -8,15 +11,38 @@ class DoublyLinkedListNode {
 
 class DoublyLinkedList {
   constructor() {
-    // Your code here 
+    // Your code here
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+
   }
 
   addToHead(val) {
-    // Your code here 
+
+    // create a newNode
+    // increment length
+    // check if the dll has length
+    // if the length list is empty
+      // set the and head tail to the newNode
+    // if there is length
+      // point our current head prev pointer at the newNode
+      // newNode next pointer at the current head
+      // point the head pointer at the newNode
   }
 
   addToTail(val) {
-    // Your code here 
+
+
+    // create a newNode
+    // increment length
+    // if the length list is empty
+      // set the head and tail to the newNode
+    // if there is length
+      // point our current tail next at the newNode
+      // point the newNode prev at the current tail
+      // point the tail pointer at the new node
+
   }
 
   // You can use this function to help debug
