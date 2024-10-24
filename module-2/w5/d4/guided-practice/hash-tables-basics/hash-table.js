@@ -93,6 +93,7 @@ class HashTable {
     // pair already exists at the index
 
     // traverse if there a linkedList
+    // while(currentPair && currentPair.key !== key)
     while(currentPair) {
 
       if(currentPair.key === key) {
@@ -116,15 +117,15 @@ class HashTable {
 }
 
 
-const hashTable = new HashTable(2);
-hashTable.insert("key-1", "val-1");// 0
-hashTable.insert("key-2", "val-2");// 1
-hashTable.insert("key-3", "val-3");//
-hashTable.insert("key-3", "NEW VAL 3");//
-hashTable.insert("key-1", "NEW VAL 1");//
+// const hashTable = new HashTable(2);
+// hashTable.insert("key-1", "val-1");// 0
+// hashTable.insert("key-2", "val-2");// 1
+// hashTable.insert("key-3", "val-3");//
+// hashTable.insert("key-3", "NEW VAL 3");//
+// hashTable.insert("key-1", "NEW VAL 1");//
 // hashTable.data[0].next;
-console.log(hashTable.data[0].next);
-console.log(hashTable);
+// console.log(hashTable.data[0].next);
+// console.log(hashTable);
 // hashTable.hashMod("A");// 0
 // hashTable.hashMod("B");// 1
 // hashTable.hashMod("C");// 1
@@ -143,3 +144,6 @@ console.log(hashTable);
     // if there is no old head, no need to point next at null
     // increment count
 module.exports = HashTable;
+
+
+// let set = {1};
