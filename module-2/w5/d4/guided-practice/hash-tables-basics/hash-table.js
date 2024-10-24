@@ -41,7 +41,7 @@ class HashTable {
     // get the index by pass the k/v to the hashMod function
     // create new k/v pair
     const index = this.hashMod(key);
-    console.log(key,index);
+    // console.log(key,index);
 
     // check is there a k/v pair at this index
     if (!this.data[index]) {
@@ -51,7 +51,7 @@ class HashTable {
       throw new Error('hash collision or same key/value pair already exists!');
     }
 
-    this.count++;
+    // this.count++;
     // if there isn't
     // insert the k/v pair at that position
     // increment count
@@ -60,10 +60,22 @@ class HashTable {
   }
 
   insertWithHashCollisions(key, value) {
-    // Your code here
     // get index of k/v pair
+    const index = this.hashMod(key);
+    // console.log(index);
+
     // create k/v pair
+    const newPair = new KeyValuePair(key, value);
+
     // check if k/v is present at index
+    if(!this.data[index]) {
+      this.data[index] = newPair
+    } else {
+      newPair.next = this.data[index];
+      this.data[index] = newPair;
+    };
+
+    this.count++;
     // if there isn't
     // insert k/v pair at the index
     // if there is
@@ -75,9 +87,50 @@ class HashTable {
 
   insert(key, value) {
     // get index of k/v pair
-    // get pair at the index
+    const index = this.hashMod(key);
+
+    let currentPair = this.data[index];
     // pair already exists at the index
-    // check if there is a ll to traverse, if there is
+
+    // traverse if there a linkedList
+    while(currentPair) {
+
+      if(currentPair.key === key) {
+        break;
+      }
+      currentPair = currentPair.next;
+    }
+
+    if(currentPair) {
+      currentPair.value = value;
+      return;
+    }
+
+    const newPair = new KeyValuePair(key, value);
+    newPair.next = this.data[index];
+
+    this.data[index] = newPair;
+    this.count++;
+
+  }
+}
+
+
+const hashTable = new HashTable(2);
+hashTable.insert("key-1", "val-1");// 0
+hashTable.insert("key-2", "val-2");// 1
+hashTable.insert("key-3", "val-3");//
+hashTable.insert("key-3", "NEW VAL 3");//
+hashTable.insert("key-1", "NEW VAL 1");//
+// hashTable.data[0].next;
+console.log(hashTable.data[0].next);
+console.log(hashTable);
+// hashTable.hashMod("A");// 0
+// hashTable.hashMod("B");// 1
+// hashTable.hashMod("C");// 1
+
+
+  // check if there is a ll to traverse, if there is
     // traverse and check if any pairs have the same key
     // as soon as we find one that does, stop traversing
     // * overwrite the value
@@ -89,15 +142,4 @@ class HashTable {
     // point the next of the new pair at the old head
     // if there is no old head, no need to point next at null
     // increment count
-  }
-}
-
-const hashTable = new HashTable(2);
-hashTable.insertNoCollisions("key-1", "val-1");
-hashTable.insertNoCollisions("key-2", "val-2");
-hashTable.insertNoCollisions("key-3", "val-3")
-// hashTable.hashMod("A");// 0
-// hashTable.hashMod("B");// 1
-// hashTable.hashMod("C");// 1
-
 module.exports = HashTable;
