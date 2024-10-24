@@ -91,22 +91,41 @@ class SinglyLinkedList {
 
 
     reverse() {
-        // Returns a new reversed version of the linked list
-        // Try implementing it by returning a new linked list then returning
-        // the original linked list reversed in place
-            // Does the time complexity change? How about space complexity?
+        const newList = new SinglyLinkedList();
 
-        // Your code here
+        let curr = this.head;
 
-        // Write your hypothesis on the time complexity of this method here
+        while(curr) {
+
+            const newNode = new SinglyLinkedNode(curr.value);
+            newNode.next = newList.head;
+            newList.head = newNode;
+            newList.length++;
+
+            curr = curr.next;
+        };
+
+        // console.log(newList);
+        return newList;
     }
 
     reverseInPlace() {
-        // Reverses the linked list in-place
 
-        // Your code here
 
-        // Write your hypothesis on the time complexity of this method here
+        let curr = this.head;
+        let next = curr;
+        let prev = null;
+
+        while(next) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        };
+
+        this.head = prev;
+
+        // console.log(this);
     }
 
 };
@@ -115,10 +134,11 @@ const list = new SinglyLinkedList();
 list.addToTail(1);
 list.addToTail(2);
 list.addToTail(3);
-// list.addToTail(4);
-// list.addToTail(5);
-// list.addToTail(6);
-console.log(list.findMid());
+
+// console.log(list.reverse());
+console.log(list)
+
+// console.log(list.findMid());
 
 class DoublyLinkedNode {
     constructor(val) {
