@@ -13,7 +13,7 @@
     * inserting, deleting, searching
     * ex: binary search requires a sorted data structures
 
-### Today we are learning naive sorts - O(n^2)
+### Sorts
     * bubbleSort
     * insertionSort
     * selectionSort
