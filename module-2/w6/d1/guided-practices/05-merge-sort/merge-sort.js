@@ -65,6 +65,12 @@ function merge(arrA, arrB) {
   return returnArr;
 }
 
+
+console.log(mergeSort([1, 7, 3, 4, 2, 0, 8, 9])); // 15 calls
+
+
+
+
 function mergeSort(arr) {
   // Check if the input is length 1 or less
   if (arr.length <= 1) return arr;

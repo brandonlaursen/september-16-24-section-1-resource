@@ -12,11 +12,9 @@
     * O(1) - In place
 
 
-  BubbleSort
-  * Walk through the entire array, comparing each adjacent pair.
-  * If they are out of order, swap their positions.
-  * Keep doing this until the entire array is sorted.
-  * Each pass will sort the array a bit more, with the larger values "bubbling up" to the top.
+Bubble Sort repeatedly traverses the array, comparing adjacent elements and swapping them if they are in the wrong order,
+effectively "bubbling" the largest unsorted element to its correct position at the end of each traversal.
+This process repeats, each time decrementing the range of comparison, until there is nothing left to sort.
 
 
 */
@@ -34,14 +32,30 @@ function bubbleSort(arr) {
 
         hasSwapped = true;
 
-        console.log(arr.join(","), arr);
+        console.log(arr.join(","));
       }
     }
   }
 }
 
+// console.log(bubbleSort([2,4,0,8,1]));
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// with notes
 function bubbleSort(arr) {
   // * Set a boolean to track swaps
   // ! what we call a flag, keep iterating as long as a swap has ocurred

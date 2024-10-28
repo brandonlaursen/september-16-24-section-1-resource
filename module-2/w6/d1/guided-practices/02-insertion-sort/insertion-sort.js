@@ -17,30 +17,8 @@
     * great to work with linked list
     * real world example - file search, data compression, path finding
 
-  Make sure to make a copy
-    * how can we make a copy?
-    * how can we can add null to the end of an array? push null
-    * iterate backwards and shift things to the right
-
 
   Insertion Sort sorts an array by sequentially inserting each element into its proper position within the initially empty sorted portion. It compares each element with those in the sorted section, shifting elements one position right to make space, thereby gradually extending the sorted array until completion.
-\
-
-
-  Insert elements in the proper position moving values over to right if necessary
-
-
-  Insertion sort out of place
-  * create a copy of the array
-  * remove the last value from the copy
-  * push null into sorted
-  * check if the current value is greater than the value to the left
-  * if the current value is greater, insert the value at that position
-  * if the current value is smaller, shift the value at that position over one to the right
-  * repeat
-
-  * insert element at a point where the value to the left is no greater
-  * finding an index to insert a value
 
 
 */
@@ -58,7 +36,8 @@ function insertionSort(arr) {
 
     let i = sorted.length - 1;
     while (i > 0) {
-      // if val is greater than value to the left, stop we found the insertion point
+      // if val is greater than value to the left,
+      // stop we found the insertion point
       if (val > sorted[i - 1]) {
         break;
       } else {
@@ -71,7 +50,19 @@ function insertionSort(arr) {
   }
 
   return sorted;
-}
+};
+
+console.log(insertionSort([2,4,0,8,1]));
+
+
+
+
+
+
+
+
+
+
 
 function insertionSortInPlace(arr) {
   let divider = 1;
@@ -99,9 +90,16 @@ function insertionSortInPlace(arr) {
   return arr;
 }
 
+console.log(insertionSortInPlace([2,4,0,8,1]));
 
 
 
+
+
+
+
+
+// with notes
 // * Insertion Sort out-of-place
 // ! Do not modify the original array
 function insertionSort(arr) {
@@ -144,24 +142,7 @@ function insertionSort(arr) {
   return sorted;
 }
 
-/*
 
-
-  Insert in place
-  * choose a divider
-  * grab the value at that position
-  * check if the current value is greater than the value to the left
-  * if the current val is greater, insert at position
-  * if the current val is smaller, shift the value thats to the left, over to the right
-  *
-  * grab a value
-  * we check if the cur val is greater than the the val to the left,
-  * if it is we insert in place
-  * if its not, we shift the value to the left to the right and repeat
-
-*/
-// * In-place Insertion Sort
-// // ! Mutates the original array
 function insertionSortInPlace(arr) {
   // * Set a pointer dividing the array into sorted and unsorted halves
   let divider = 1;
