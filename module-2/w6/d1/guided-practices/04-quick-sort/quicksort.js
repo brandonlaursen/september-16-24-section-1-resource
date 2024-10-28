@@ -1,5 +1,3 @@
-
-
 /*
 
 
@@ -36,7 +34,30 @@
 */
 
 function quicksort(arr) {
+  if (arr.length <= 1) return arr;
 
+  let pivot = arr[0];
+  let left = [];
+  let right = [];
+
+  for (let i = 1; i < arr.length; i++) {
+    let num = arr[i];
+
+    if (num >= pivot) {
+      right.push(num);
+    } else {
+      left.push(num);
+    }
+  }
+
+  let leftSort = quicksort(left);
+
+  let rightSort = quicksort(right);
+
+  return [...leftSort, pivot, ...rightSort];
+}
+
+function quicksort(arr) {
   // * Check if the input is length 1 or less
   // * If so, it's already sorted: return
   if (arr.length <= 1) return arr;
@@ -70,7 +91,6 @@ function quicksort(arr) {
 
   // * Return the left, pivot and right in sorted order
   return [...leftSort, pivot, ...rightSort];
-};
-
+}
 
 module.exports = [quicksort];

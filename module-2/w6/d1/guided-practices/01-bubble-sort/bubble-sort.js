@@ -22,6 +22,27 @@
 */
 
 function bubbleSort(arr) {
+  let hasSwapped = true;
+
+  while (hasSwapped) {
+    hasSwapped = false;
+
+    for (let i = 0; i < arr.length; i++) {
+      // is current value greater than value to the right?
+      if (arr[i] > arr[i + 1]) {
+        [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+
+        hasSwapped = true;
+
+        console.log(arr.join(","), arr);
+      }
+    }
+  }
+}
+
+
+
+function bubbleSort(arr) {
   // * Set a boolean to track swaps
   // ! what we call a flag, keep iterating as long as a swap has ocurred
   // ! if no swap occurs; the array is sorted
@@ -59,6 +80,6 @@ function bubbleSort(arr) {
   }
 
   return arr;
-};
+}
 
 module.exports = bubbleSort;

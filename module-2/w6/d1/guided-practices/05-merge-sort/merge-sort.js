@@ -32,6 +32,40 @@
 */
 
 function mergeSort(arr) {
+  if (arr.length <= 1) return arr;
+
+  const midPoint = Math.floor(arr.length / 2);
+
+  const left = arr.slice(0, midPoint);
+  const right = arr.slice(midPoint, arr.length);
+
+  const leftSorted = mergeSort(left);
+
+  const rightSorted = mergeSort(right);
+
+  return merge(leftSorted, rightSorted);
+}
+
+function merge(arrA, arrB) {
+  const returnArr = [];
+
+  let indexA = 0;
+  let indexB = 0;
+
+  while (indexA < arrA.length || indexB < arrB.length) {
+    if (indexA === arrA.length || arrA[indexA] > arrB[indexB]) {
+      returnArr.push(arrB[indexB]);
+      indexB++;
+    } else {
+      returnArr.push(arrA[indexA]);
+      indexA++;
+    }
+  }
+
+  return returnArr;
+}
+
+function mergeSort(arr) {
   // Check if the input is length 1 or less
   if (arr.length <= 1) return arr;
   // If so, it's already sorted: return
@@ -41,7 +75,6 @@ function mergeSort(arr) {
 
   const left = arr.slice(0, midPoint);
   const right = arr.slice(midPoint, arr.length);
-  // console.log(left, right);
 
   // (n log n)
   // Recursively sort the left half
@@ -53,7 +86,6 @@ function mergeSort(arr) {
   return merge(leftSorted, rightSorted);
 }
 
-// [1,2,3,4]
 // o(n)
 // Takes in two sorted arrays and returns them merged into one
 function merge(arrA, arrB) {
@@ -64,13 +96,11 @@ function merge(arrA, arrB) {
   let indexA = 0;
   let indexB = 0;
 
-  // (n )
-  // []  [2]
+
   // While there are still values in each array...
   // if arrA is empty or the value in arrA is larger
   // push the value from the arrB and increment
   while (indexA < arrA.length || indexB < arrB.length) {
-
     if (indexA === arrA.length || arrA[indexA] > arrB[indexB]) {
       returnArr.push(arrB[indexB]);
       indexB++;
@@ -86,10 +116,10 @@ function merge(arrA, arrB) {
   // Move the pointer to the next value in that array
 
   // Return the return array
-};
-
+}
 
 // Merge
 // * Takes in two sorted arrays and returns them merged into one
 // * Space complexity O(n)
 // * do so by moving pointers
+console.log(mergeSort([1, 7, 3, 4, 2, 0, 8, 9])); // 15 calls
