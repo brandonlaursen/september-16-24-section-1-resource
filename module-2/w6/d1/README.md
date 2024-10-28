@@ -17,6 +17,9 @@
     * bubbleSort
     * insertionSort
     * selectionSort
+    * Merge Sort Practice
+    * Quicksort Practice
+
 
 ### Niche use cases
   * May only come up in coding interviews
@@ -101,11 +104,6 @@ for (let i = arr2.length - 1; i > 0; i--) {
   * Keep doing this until the entire array is sorted.
   * Each pass will sort the array a bit more, with the larger values "bubbling up" to the top.
 
-## `Practice: Bubble Sort 30m(SOLO)`
-
-## `Bubble Sort Walkthrough`
-
-
 ## `Insertion sort`
   * Time complexity -
     * Worst case - O(n^2)
@@ -125,11 +123,6 @@ for (let i = arr2.length - 1; i > 0; i--) {
     * iterate backwards and shift things to the right
 
 
-## `Practice: Insertion Sort 30m(SOLO)`
-
-## `Insertion Sort Walkthrough`
-
-
 ## Selection sort
   * Time complexity -
     * Worst case - O(n^2)
@@ -138,6 +131,96 @@ for (let i = arr2.length - 1; i > 0; i--) {
   * Space complexity -
     * O(n) - Out of place
     * O(1) - In place
-## `Practice: Selection Sort 30m(SOLO)`
 
-## `Selection Sort Walkthrough`
+
+## `Quick sort`
+  * Just like Merge Sort, Quick Sort uses a divide and conquer strategy.
+
+### The key ideas of Quick Sort are:
+  * 1. It is easy to sort elements of an array relative to a particular target value.
+  * 2. An array of 0 or 1 elements is already sorted
+
+
+### Time Complexity
+  Best case: O(n log(n))
+  * First, we’ll divide the array into two sub-arrays recursively, which will cost a time complexity of O(log n).
+  * For each function call, we are calling the partition function, which costs O(n) time complexity.
+  * Hence the total time complexity is O(nlogn).
+
+### Worst case: O(n^2)
+  * When the array is sorted in descending order or all the elements are the same in the array, the time complexity jumps to O(n²), since the sub-arrays are highly unbalanced.
+
+### Space complexity
+  * O(n) - proportional to size of call stack
+
+### This algorithm sorts values using the following divide and conquer approach:
+  * Split the unsorted array in half (divide)
+  * Sort the halves (conquer)
+  * Merge the newly sorted halves
+
+### Use cases
+  * In computer graphics, QuickSort is used for image rendering.
+  * Data visualization.
+  * In numerical computations, QuickSort is used for matrix sorting.
+
+ When the partitioning algorithm always chooses the middle element or near the middle element as the pivot
+
+## Merge sort
+  * Merge sort is the first of the efficient algorithms you will learn.
+
+  * Merge sort operates with a much better time complexity than the more naive approaches we started with.
+
+### The main ideas of merge sort are:
+  * 1. It is easy to merge elements of two sorted arrays into a single sorted array
+  * 2. You can consider an array containing only a single element as already sorted
+  * 3. You can also consider an empty array as sorted
+
+### Time Complexity
+  * Best case: O(n log n)
+  * Worst case: O(n log n)
+## Space complexity
+  * O(n) - proportional to size of call stack
+
+This algorithm sorts values using the following divide and conquer approach:
+  * Split the unsorted array in half (divide)
+  * Sort the halves (conquer)
+  * Merge the newly sorted halves
+
+## `Logarithm`
+
+![big-o-comparison](./big-O-chart.svg)
+
+// * Linear search
+// return index of target
+function linearSearch(arr, target) {
+
+  // ? Can you solve this in one line?
+  // for (let i = 0; i < arr.length; i++) {
+  //   if (arr[i] === target) return i;
+  // }
+  // return -1;
+  //
+
+  return arr.indexOf(target);
+};
+
+// linearSearch([2,4,6,8], 6);  // 2
+// linearSearch([2,4,6,8], 10);  // -1
+
+
+/*
+
+## What is a Logarithm?
+  * inverse of an exponent
+  * super-efficient
+  * The logarithm base-n of a number is how many times it must be divided by n to reach 1
+
+### Exponents
+```
+    * 2^5 === 2 * 2 * 2 * 2 * 2 = 32
+      ? 2 multiplied by itself 5 times is 32
+```
+### Logarithm
+  * log base(n)
+  * log2(32) = 5
+    * How many times would we need to divide 32 by 2 to equal 5

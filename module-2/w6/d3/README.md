@@ -1,152 +1,207 @@
-# `Week 6 Day 3`
+# `Week 6 Day 4`
 
-- Binary Search Trees Demo
-- Binary Search Tree Practice
+- Graphs Demo
+- Refactor Breadth-First Traversal
+- Simple Breadth-First Search
+- A Shortest Path
+- Degrees of Separation
+- Social Graph Practice
+- Matrixes Demo
+- Problem Solving Approach Demo
 
-
-## `Binary Search Tree`
-* Binary search is a powerful and elegant algorithm that allows you to search through enormous data sets with just a handful of comparisons.
-* Data MUST be sorted
-  * Can use a O(n log n) to sort data
-  * Quicksort
-  * Mergesort
-* Binary search trees are a node-and-pointer-based data structure, similar to a doubly linked list
-* same O(log n) search as a sorted array
-* but with O(log n) insertion and deletion as well.
-
-### Binary tree vs Binary Search Tree
-* binary trees are nodes than have more than one child node
-* binary search tree is a sorted binary tree with search properties
-! All binary search trees are binary trees, but not all binary trees are binary search trees
-
-### Key difference
-* every node contained in the left branch of any node will be less than the value of the node itself
-* every node in the right branch will be greater than the node value
-
-### Properties of Binary Search Tree
-* node with left and right pointers
-  * note they always point downward
-
-### There are three possible implementations for handling values that are equal to a value in an existing node:
-  * Discard the duplicate, similar to a set
-  * Place equal values to the left
-  * Place equal values to the right
-```
-  ? Is this a binary search tree?
-    * yes
-          4
-        /   \
-       2     6
-      / \   / \
-     1   3 5   7
-
-   ? Is this a binary search tree?
-    * no - normal binary tree
-          5
-        /   \
-       2     6
-      / \   / \
-     1   3 4   7
-```
+## `Refactor Breadth-First Traversal 20min(Solo)`
+## `Refactor Breadth-First Traversal Walkthrough`
+## `Simple Breadth-First Search 20min(Solo)`
+## `Simple Breadth-First Search Walkthrough`
+## `A Shortest Path 20min(Solo)`
+## `A Shortest Path Walkthrough`
+## `Degrees of Separation 20min(Solo)`
+## `Degrees of Separation Walkthrough`
+## `Social Graph Practice 20min(Solo)`
+## `Social Graph Practice Walkthrough`
+## `Matrix Demo`
 ```js
-class TreeNode {
-  constructor(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
+const matrix = [
+  [ 0, 1, 0, 0, 1 ],
+  [ 1, 0, 0, 0, 1 ],
+  [ 1, 1, 0, 1, 1 ],
+  [ 0, 1, 1, 0, 0 ],
+  [ 0, 0, 0, 0, 0 ]
+];
+
+function getNeighbors(node, matrix) {
+  let neighbors = [];
+  let row = node[0];
+  let col = node[1];
+
+  // Up
+  if (row - 1 >= 0) {
+      neighbors.push([row - 1, col]);
+  }
+
+  // Down
+  if (row + 1 < matrix.length) {
+      neighbors.push([row + 1, col]);
+  }
+
+  // Left
+  if (col - 1 >= 0) {
+      neighbors.push([row, col - 1]);
+  }
+
+  // Right
+  if (col + 1 < matrix[row].length) {
+      neighbors.push([row, col + 1]);
+  }
+  return neighbors;
+}
+
+// returns the correct neighbors from an internal node
+console.log(getNeighbors([2,2], matrix)) // returns [ [1,2], [3,2], [2,1], [2,3] ]
+
+// returns the correct neighbors from a corner node
+getNeighbors([0,0], matrix) // returns [ [1,0], [0,1] ]
+
+// returns the correct neighbors from an edge node
+getNeighbors([2,0], matrix) // returns [ [1,0], [3,0], [2,1] ]
+```
+
+## Problem solving approach to graphs
+  ### 1. Identify and define the type of graph
+  * What is the problem asking you to do?
+  * What does the matrix represent?
+  * What does each node represent?
+  * What relationship do the edges represent?
+  * What is considered a valid neighbor, in the context of this problem?
+  * Is this a search or traversal problem?
+  * Does this require a depth-first or breadth-first approach?
+  ### 2. Implement the getNeighbors function
+
+
+* Adjacency List - represents relationships as an object data type
+* Node 1 has two neighbor nodes [2, 5]
+```js
+adjacencyList = {
+  1: [2, 5],
+  2: [1, 3, 5],
+  3: [2, 4],
+  4: [3, 5, 6],
+  5: [1, 2, 4],
+  6: [4],
+};
+
+// * Adjacency List
+function getNeighbors(adjacencyList, currentNode) {
+  return adjacencyList[currentNode];
+}
+
+// * Matrix - represents relationships as a two-dimensional (2-D) array data type
+// * Try to visualize a matrix as columns and rows
+// * columns - up and down
+// * row - left
+// ex: [row][col] - [0][1]
+let matrix = [
+  [0, 1, 0, 0, 1],
+  [1, 0, 0, 0, 1],
+  [1, 1, 0, 1, 1],
+  [0, 1, 1, 0, 0],
+  [0, 0, 0, 0, 0],
+];
+
+// * This function will get us neighbors of our current node
+// * The [0,0] node has three neighbor nodes [ [0,1], [1,0], [1,1] ],
+// * if we are counting diagonals as valid neighbors
+function getNeighbors(node, matrix) {
+  let neighbors = [];
+  let row = node[0];
+  let col = node[1];
+
+  // * we can modify the logic to only get nodes that contain a specific value
+  // ! depends on what the problem is asking
+  // Up
+  if (row - 1 >= 0) {
+    neighbors.push([row - 1, col]);
+  }
+
+  // Down
+  if (row + 1 < matrix.length) {
+    neighbors.push([row + 1, col]);
+  }
+
+  // Left
+  if (col - 1 >= 0) {
+    neighbors.push([row, col - 1]);
+  }
+
+  // Right
+  if (col + 1 < matrix[row].length) {
+    neighbors.push([row, col + 1]);
+  }
+  return neighbors;
+}
+
+// // * returns the correct neighbors from an internal node
+// console.log(getNeighbors([2,2], matrix)) // returns [ [1,2], [3,2], [2,1], [2,3] ]
+
+// // * returns the correct neighbors from a corner node
+// console.log(getNeighbors([0,0], matrix)) // returns [ [1,0], [0,1] ]
+
+// // * returns the correct neighbors from an edge node
+// console.log(getNeighbors([2,0], matrix)) // returns [ [1,0], [3,0], [2,1] ]
+```
+
+* This get neighbors function gets top, bottom, left, and right
+* you may run into problems that ask you to get the top-left, top-right, bottom-left, bottom-right as well
+* you will need to modify your getNeighbors function depending on what the problem is asking
+
+###  3. Traverse the graph
+
+* Create a queue and enqueue the starting node
+* Create a set to store visited nodes
+* While the queue is not empty, repeat steps 4-6
+* Dequeue the first node and check if it's been visited
+* If not, mark it as visited and DO THE THING
+* Put all its neighbors in the back of the queue
+
+May need to modify breadthFirstSearch depending on what problem is asking
+```js
+function printBreadthFirst(start) {
+  const queue = [start];
+  const visited = new Set([start]);
+
+  // ? Are you tracking shortest path
+  // let path = []
+  // ? Are you counting something
+  // let count = 0;
+
+
+  while (queue.length) {
+    const curr = queue.shift();
+
+    // ! DO THE THING
+
+    // * FIND NEIGHBORS
+    let neighbors = adjList[curr];
+
+    neighbors.forEach((neighbor) => {
+      if (!visited.has(neighbor)) {
+        queue.push(neighbor);
+        visited.add(neighbor);
+      }
+    });
   }
 }
 
-let a = new TreeNode(4);
-let b = new TreeNode(2);
-let c = new TreeNode(6);
-let d = new TreeNode(1);
-let e = new TreeNode(3);
-let f = new TreeNode(5);
-let g = new TreeNode(7);
 
-a.left = b;
-a.right = c;
-b.left = d;
-b.right = e;
-c.left = f;
-c.right = g;
+// ! Note! If you need to store coordinates you must store them as strings
+// Arrays are reference data types so if you try to compare you will get misleading results
+// ex:
 
-class Tree {
-  constructor(node) {
-    this.root = node;
-  }
-}
 
-const myTree = new Tree(a);
+// console.log([1,2] === [1,2]);
 
-// console.log('myTree:', myTree);
-/*
-          4
-        /   \
-       2     6
-      / \   / \
-     1   3 5   7
-*/
+console.log(`1,2` == `1,2`)
+// `${neighbor[0]},${neighbor[1]}`
 ```
 
-
-### Time complexity
-* O(log n)
-* Each comparison in a binary search tree moves down by one level
-* so the worst-case number of calls is equal to the height of the tree.
-* Since adding a level doubles the capacity, moving down a level reduces the number of values to search by half. Just like binary search, this divide-and-conquer approach results in a time complexity of O(log n).
-
-### Search a binary tree
-### Searching a binary tree recursively
-```js
-function searchBST(root, target) {
-
-  if (root === null) return false;
-
-  if (target === root.val) return true;
-
-  if (target < root.val) return searchBST(root.left, target);
-
-  if (target > root.val) return searchBST(root.right, target);
-}
-
-
-// console.log(searchBST(myTree.root, 5));// true
-// console.log(searchBST(myTree.root, 27));// false
-```
-
-#### searching a binary tree iteratively
-```js
-function searchBST(root, target) {
-
-  let currentNode = root;
-
-  while (currentNode !== null) {
-
-      if (target === currentNode.value) return true
-
-      else if (target < currentNode.value) currentNode = currentNode.left
-
-      else currentNode = currentNode.right;
-  }
-
-  return false;
-
-}
-
-// console.log(searchBST(myTree.root, 5));// true
-// console.log(searchBST(myTree.root, 27));// false
-```
-
-
-## `Binary Tree Search Tree Phase 1 - 30m(SOLO)`
-## `Binary Tree Search Tree Phase 1 Walkthrough`
-## `Binary Tree Search Tree Phase 2 - 30m(SOLO)`
-## `Binary Tree Search Tree Phase 2 Walkthrough`
-## `Binary Tree Search Tree Phase 3 - 30m(SOLO)`
-## `Binary Tree Search Tree Phase 3 Walkthrough`
-## `Binary Tree Search Tree Phase 4 - 30m(SOLO)`
-## `Binary Tree Search Tree Phase 4 Walkthrough`
-
-## `Binary Search Tree Long Practice Till EOD(Paired)`
+## `Work on Long practices till EOD(Paired)`
