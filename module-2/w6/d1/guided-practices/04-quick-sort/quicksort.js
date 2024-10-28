@@ -57,7 +57,26 @@ function quicksort(arr) {
   return [...leftSort, pivot, ...rightSort];
 }
 
-console.log(quicksort([4, 3, 1, 7, 2]));
+
+
+
+// console.log(quicksort([4, 3, 1, 7, 2]));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function quicksort(arr) {
   // * Check if the input is length 1 or less
