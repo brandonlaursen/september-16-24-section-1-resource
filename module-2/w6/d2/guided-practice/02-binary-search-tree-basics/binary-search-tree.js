@@ -68,24 +68,46 @@ class BinarySearchTree {
     if (val > currentNode.val) return this.search(val, currentNode.right);
   }
 
+  // prints the nodes in the order we call stack frames
   preOrderTraversal(currentNode = this.root) {
-    // Your code here
+    if (!currentNode) return;
+
+    console.log(currentNode.val);
+    this.preOrderTraversal(currentNode.left);
+    this.preOrderTraversal(currentNode.right);
   }
 
+
+  // prints the nodes after the current nodes
+  // left stack frame is popped off
   inOrderTraversal(currentNode = this.root) {
-    // Your code here
+    if (!currentNode) return;
+
+    this.inOrderTraversal(currentNode.left);
+    console.log(currentNode.val);
+    this.inOrderTraversal(currentNode.right);
   }
+
+
 
   postOrderTraversal(currentNode = this.root) {
-    // Your code here
+
+
+    if (!currentNode) return;
+
+    this.postOrderTraversal(currentNode.left);
+    this.postOrderTraversal(currentNode.right);
+    console.log(currentNode.val);
   }
 
   // Breadth First Traversal - Iterative
+   // 4 2 6 1 3 5 7
   breadthFirstTraversal() {
     // Your code here
   }
 
   // Depth First Traversal - Iterative
+  // 4 6 7 5 2 3 1
   depthFirstTraversal() {
     // Your code here
   }
@@ -99,5 +121,8 @@ bst.insert(1);
 bst.insert(3);
 bst.insert(5);
 bst.insert(7);
+// bst.preOrderTraversal();
+// bst.inOrderTraversal();
+bst.postOrderTraversal();
 
 module.exports = { BinarySearchTree, TreeNode };
