@@ -14,21 +14,20 @@ class BinarySearchTree {
 
   insert(val, currentNode = this.root) {
     // check if there is no root; if there isnt the newNode becomes the root
-    if(!this.root) {
+    if (!this.root) {
       this.root = new TreeNode(val);
       return;
     }
     // if val is smaller than the currentNode
-    if(val < currentNode.val) {
-
-       // check is there a left node?
-       if(!currentNode.left) {
+    if (val < currentNode.val) {
+      // check is there a left node?
+      if (!currentNode.left) {
         currentNode.left = new TreeNode(val);
-       } else {
+      } else {
         this.insert(val, currentNode.left);
-       }
+      }
     } else {
-      if(!currentNode.right) {
+      if (!currentNode.right) {
         currentNode.right = new TreeNode(val);
       } else {
         this.insert(val, currentNode.right);
@@ -44,21 +43,29 @@ class BinarySearchTree {
   }
 
   search(val) {
-
-
     let currentNode = this.root;
 
-    while(currentNode) {
-      if(val < currentNode.val) {
+    while (currentNode) {
+      if (val < currentNode.val) {
         currentNode = currentNode.left;
-      } else if(val > currentNode.val) {
+      } else if (val > currentNode.val) {
         currentNode = currentNode.right;
       } else {
         return true;
       }
-    };
+    }
 
     return false;
+  }
+
+  search(val, currentNode = this.root) {
+    if (currentNode === null) return false;
+
+    if (val === currentNode.val) return true;
+
+    if (val < currentNode.val) return this.search(val, currentNode.left);
+
+    if (val > currentNode.val) return this.search(val, currentNode.right);
   }
 
   preOrderTraversal(currentNode = this.root) {
