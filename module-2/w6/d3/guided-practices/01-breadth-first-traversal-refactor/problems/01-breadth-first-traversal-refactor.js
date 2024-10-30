@@ -17,10 +17,40 @@ const adjList = {
 }
 
 function breadthFirstTraversal(start) {
-  // Your code here 
+
+  const queue = [start];
+
+  const visitedNodes = new Set([start]);;// Set(1) { 3 }
+
+  
+  // console.log(visitedNode);
+
+  const result = [];
+
+  while(queue.length) {
+    const currentNode = queue.shift();
+
+    // result.push(currentNode);
+    // DO THE THING!
+    // STOP WHEN YOU FIND WHAT YOURE SEARCHING FOR
+
+    // find neighbors
+    const neighbors = adjList[currentNode];
+    // console.log(neighbors);
+
+    neighbors.forEach(neighbor => {
+      if(!visitedNodes.has(neighbor)) {
+        queue.push(neighbor);
+        visitedNodes.add(neighbor);
+      }
+    })
+
+  }
+
+  return result;
 }
 
-// console.log(breadthFirstTraversal(3)); // [3, 2, 4, 1, 5, 6]
+console.log(breadthFirstTraversal(3)); // [3, 2, 4, 1, 5, 6]
 // console.log(breadthFirstTraversal(6)); // [6, 4, 3, 5, 2, 1]
 // console.log(breadthFirstTraversal(4)); // [4, 3, 5, 6, 2, 1]
 
