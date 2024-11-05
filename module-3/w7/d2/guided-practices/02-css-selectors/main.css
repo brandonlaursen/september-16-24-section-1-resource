@@ -1,4 +1,62 @@
-/* Your code here */
+
+
+
+
+
+/*
+
+    tag
+        * tagName -
+    apply to all elements with that tag
+    class
+        * .className - apply to all html elements with the that class
+        - can be used by multiple different tags
+    id
+        * #idName
+        -  unique can only be applied to a single tag
+*/
+
+#page-title{
+    font-weight: bold;
+}
+
+
+.pagenum {
+    position: absolute;
+    right: 10px;
+    font-size: small;
+}
+
+
+p{
+    margin-top: .75em;
+    margin-bottom: .75em;
+    text-align: justify;
+    /* justify-content: center; */
+
+}
+
+pre {
+    width: fit-content;
+    margin: 100px auto;
+    /* margin-bottom: 100px;
+    margin-top: 100px; */
+}
+
+
+a {
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+
+pre > a {
+    color: black;
+}
 
 /* ===== DO NOT EDIT BELOW THIS COMMENT ===== */
 
