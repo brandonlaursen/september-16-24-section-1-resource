@@ -9,12 +9,14 @@ html, body {
     /* DO NOT EDIT */
     vertical-align: bottom;
 
-    /* Your code here 
+    width: 30px;
+    height: 30px;
+    margin-bottom: 4px;
 }
 
 
 h1 {
-    /* Your code here 
+    display: inline;
 }
 
 /* Phase 2 */
@@ -22,12 +24,18 @@ h1 {
 .box {
     /* DO NOT EDIT */
     vertical-align: top;
+    height: 120px;
+    width: 120px;
+    border: 4px dotted black;
+    background-color: rgb(206, 233, 99);
+    margin: 10px;
+    padding: 20px;
 
-    /* Your code here 
+    display: inline-block;
 }
 
 .alternate {
-    /* Your code here 
+    box-sizing: border-box;
 }
 
 /* Phase 3 */
@@ -43,13 +51,14 @@ h1 {
     /* DO NOT EDIT */
     background-color: lightgray;
     font-size: larger;
+    width: fit-content;
+    margin: 0 auto 10px;
+    padding: 40px;
 
-    /* Your code here 
 }
 
 .attribution {
     /* DO NOT EDIT */
     font-style: italic;
-
-    /* Your code here 
+    display: block;
 }

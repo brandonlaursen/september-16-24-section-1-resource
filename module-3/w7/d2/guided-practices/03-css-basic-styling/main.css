@@ -1,12 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
 h1 {
-    font-size: ;
-    font-family: ;
-    padding: ;
-    margin: ;
-    font-weight: ;
-    text-decoration: ;
-    color: ;
-    background-color: ;
+    font-size: 50px;
+    font-family: "Open Sans";
+    padding: 50px;
+    margin: 10px;
+    font-weight: bold;
+    text-decoration: underline;
+    color: red;
+    background-color: grey;
 }
 
 h2 {
@@ -30,8 +32,8 @@ p {
 
 .logo {
     background-size: cover;
-    background-image: url();
-    background-color: ;
-    height: ;
-    width: ;
+    background-image: url("https://appacademy.github.io/styleguide/assets/logo/logo-emblem-black-1000.png");
+    background-color: red;
+    height: 75px;
+    width: 75px;
 }

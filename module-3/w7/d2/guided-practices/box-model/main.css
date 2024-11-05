@@ -1,0 +1,63 @@
+
+body{
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  background-color: grey;
+  height: 500px;
+  width: 500px;
+  text-align:center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /*
+  sets the containers width to the width of the box
+    that includes the boxes size, padding, and border
+
+  The size of the container becomes the size of the box
+  */
+  width: fit-content;
+  height: fit-content;
+}
+
+/*
+
+
+  Container is 500 x 500
+
+  Box initial size is 300 x 300
+
+  Border and Padding add to the size of the box
+
+  * Border is 25 x 25
+
+  * Padding is 25 x 25
+
+  300 + (25 + 25) + (25 + 25) = 400
+
+  If we did 50 for both padding and border
+    300 + (50 + 50) + (50 + 50) = 400
+
+
+*/
+
+.box{
+  background-color: lightseagreen;
+  height: 300px;
+  width:300px;
+
+  border-style: solid;
+  border-color: red;
+  border-width: 25px;
+
+
+  padding: 25px;
+
+}
