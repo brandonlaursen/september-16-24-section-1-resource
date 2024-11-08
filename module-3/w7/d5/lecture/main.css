@@ -1,0 +1,18 @@
+
+nav{
+  background-color: red;
+  height: 300px;
+  width: 200px;
+
+}
+
+
+
+@media screen and (max-width: 700px){
+
+ nav{
+  display: flex;
+  
+ }
+
+}
