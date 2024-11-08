@@ -1,0 +1,35 @@
+name: GitHub Classroom Autograder - HTML/CSS 1a (Clone)
+on:
+  push:
+    branches-ignore:
+      - main
+      - master
+
+env:
+  MAX_SCORE: 20
+  PASSING_SCORE: 16
+  COURSE_ID: '313' # (Required) canvas course id
+  ASSIGNMENT_ID: '17506' # (Required) canvas assignment id
+
+jobs:
+  grade:
+    name: Grade Submission for ${{ github.ref_name }}
+    runs-on: ubuntu-latest
+    steps:
+      # This assessment is not autograded, 
+      # so just send a score of 0 on submission
+      - name: Send student's grade to SF
+        if: ${{ always() }}
+        run: |
+          echo "  SCORE: 0 (Not Autograded)  "
+          curl -X POST '${{ secrets.RESULTS_WEBHOOK }}' \
+            -H 'Content-Type: application/json' \
+            -d '{
+              "GithubUsername": "${{ github.ref_name }}",
+              "PostedGrade": "0",
+              "MaxScore": "'${MAX_SCORE}'",
+              "PassingScore": "'${PASSING_SCORE}'",
+              "CourseId": "'${COURSE_ID}'",
+              "AssignmentId": "'${ASSIGNMENT_ID}'",
+              "GithubRepoUrlPath": "${{ github.repository }}"
+            }'
