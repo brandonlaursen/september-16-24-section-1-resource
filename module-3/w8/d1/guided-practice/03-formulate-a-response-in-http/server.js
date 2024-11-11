@@ -5,16 +5,29 @@ const http = require('http');
 const server = http.createServer((req, res) => {
 
   // REQUEST
-  // console.log("req", req);
-  // console.log("method", req.method); // GET
+//   console.log("req", req);
+//   console.log("method", req.method); // GET
   // console.log("headers", req.headers); // headers {}
-  // console.log("url", req.url); // /
+//   console.log("url", req.url); // /
   // console.log("on", req.on); // [Function (anonymous)]
 
+
+//   if(req.method === 'POST' && req.url === '/dogs'){
+//     console.log('this is the post route')
+//     return;
+//   }
+
+//   if(req.method === 'GET' && req.url === '/dogs'){
+//     console.log('this is the get route')
+//     return;
+//   }
+
+
   // RESPONSE
-  // console.log("res", res); // giant object
-  // console.log("statusCode", res.statusCode); // 200
-  // console.log("setHeader", res.setHeader); // [Function: setHeader]
+//   console.log("res", res); // giant object
+//   res.statusCode = 404;
+//   console.log("statusCode", res.statusCode); // 200
+//   console.log("setHeader", res.setHeader); // [Function: setHeader]
   // console.log("write", res.write); // [Function: write]
   // console.log("end", res.end); // [Function: end]
 
@@ -40,10 +53,10 @@ const server = http.createServer((req, res) => {
 
     // *  write method doesn't set the body of the response, it adds to the body of the response
     // res.write(responseBody);
-    // res.end()
+    res.end()
 
     // *  same as write - The end method has one more functionality though. Which is to end the creation of the response and send it.
-    res.end(responseBody);
+    // res.end(responseBody);
     return;
 })
 
