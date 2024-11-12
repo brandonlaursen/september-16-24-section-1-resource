@@ -92,6 +92,7 @@ const server = http.createServer((req, res) => {
 
   // When the request is finished processing the entire body
   req.on("end", () => {
+    console.log('===>',reqBody)
     // Parsing the body of the request
     if (reqBody) {
       req.body = reqBody
@@ -106,7 +107,37 @@ const server = http.createServer((req, res) => {
       console.log(req.body);
     }
 
-    // Your code here 
+
+    // Phase 1: Creating a Cat
+    // console.log(req.url, req.method);
+    if(req.method === 'POST' && req.url === '/cat') {
+
+      const { name, pattern, size, description} = req.body;
+
+      cat = new Cat({ name, pattern, size, description});
+
+      res.statusCode = 302;
+
+      res.setHeader('Location', "/");
+
+      return res.end();
+    }
+
+    // Phase 2: Creating a Dog
+    if(req.method === 'POST' && req.url === '/dog') {
+
+      const { name, color, age, description} = req.body;
+
+      dog = new Dog({ name, color, age, description});
+
+      res.statusCode = 302;
+
+      res.setHeader('Location', "/");
+
+      return res.end();
+    }
+
+
 
     res.statusCode = 404;
     res.end("Page Not Found");
