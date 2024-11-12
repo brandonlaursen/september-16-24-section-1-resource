@@ -68,9 +68,14 @@ const server = http.createServer((req, res) => {
     }
 
     if(req.method === 'GET' && req.url.includes('edit')) {
-      
+
       res.statusCode = 200;
       res.setHeader("Content-type", "text/plain");
+
+      // /dogs/1/edit
+      // ['', 'dogs', '1', 'edit]
+      // +'1'
+      // 1
       const dogId = +req.url.split("/")[2];
 
       return res.end(`Dog edit form page for dogId: ${dogId}`);
