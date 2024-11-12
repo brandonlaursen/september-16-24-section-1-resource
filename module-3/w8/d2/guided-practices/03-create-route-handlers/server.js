@@ -16,9 +16,11 @@ const server = http.createServer((req, res) => {
     reqBody += data;
   });
 
+
   // When the request is finished processing the entire body
   req.on("end", () => {
     // Parsing the body of the request
+    console.log(reqBody);// description=woah%21%21&text=UPDATED
     if (reqBody) {
       req.body = reqBody
         .split("&")
@@ -29,11 +31,26 @@ const server = http.createServer((req, res) => {
           acc[key] = value;
           return acc;
         }, {});
-      console.log(req.body);
+      console.log(req.body);// { description: 'woah!!', text: 'UPDATED' }
     }
+
     // Do not edit above this line
 
     // define route handlers here
+    if(req.method === 'GET' && req.url === '/') {
+      // console.log('we made it!')
+      // set a status code
+      // console.log('==>',res);
+      res.statusCode = 200;
+
+      // set the headers & body if there is one
+      res.setHeader('Content-Type', 'text/plain')
+      // res.write('text')
+
+      return res.end('text');
+      // end the response
+
+    }
 
     // Do not edit below this line
     // Return a 404 response when there is no matching route handler
