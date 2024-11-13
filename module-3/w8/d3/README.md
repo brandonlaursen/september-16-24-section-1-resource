@@ -96,8 +96,6 @@ function function2() {
 }
 
 ```
-## `Practice: Create and Handle Promises - 20min(Solo)`
-## `Practice: Create and Handle Promises Walkthrough`
 
 
 ## Async Await/ Promise.all
@@ -127,10 +125,9 @@ async function chainPromises() {
 chainPromises();
 ```
 
-## `Practice: Promise.all - 20min(Solo)`
-## `Practice: Promise.all Walkthrough`
-## `Practice: async/await - 20min(Solo)`
-## `Practice: async/await Walkthrough`
+## `Practice: Create and Handle Promises`
+## `Practice: Promise.all`
+## `Practice: async/await`
 
 ## Fetch
 * using node-fetch package to use the fetch keyword in node

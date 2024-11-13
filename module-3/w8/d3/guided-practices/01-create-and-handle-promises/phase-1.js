@@ -1,8 +1,8 @@
 function stretch() {
   return new Promise((res, rej) => {
     setTimeout(() => {
-      console.log("done stretching");
-      res();
+      // console.log("done stretching");
+      res("done stretching");
     }, 1000);
   });
 }
@@ -25,21 +25,35 @@ function liftWeights() {
   });
 }
 
-function workout() {
+async function workout() {
   // stretch();
   // runOnTreadmill();
   // liftWeights();
 
+  // promise .then chaining
   // stretch()
-  //   .then(() => runOnTreadmill())
+  //   .then((msg) => {
+  //     console.log('==>',msg);
+  //     runOnTreadmill();
+  //   })
   //   .then(() => liftWeights())
-  //   .then(() => console.log('done working out'));
+  //   .then(() => console.log("done working out"));
 
-  Promise.all([stretch(), runOnTreadmill(), liftWeights()])
-    .then(() => console.log("done working out"))
-    .catch((e) => console.log(e));
+  // promise.all
+  // Promise.all([stretch(), runOnTreadmill(), liftWeights()])
+  //  .then(console.log('in console.log') )
+  // .then(() => console.log("done working out"));
+  // .catch((e) => console.log(e));
 
-
+  // async await
+  // try {
+  //   await stretch();
+  //   await runOnTreadmill();
+  //   await liftWeights();
+  //   console.log("done working out");
+  // } catch (e) {
+  //   console.log(e);
+  // }
 }
 
 /* ============================ TEST YOUR CODE ============================
