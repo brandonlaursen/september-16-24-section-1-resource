@@ -1,3 +1,6 @@
+
+
+
 export function getAllDogs() {
   // fetch(url, options)
   //
@@ -6,24 +9,25 @@ export function getAllDogs() {
 
 export function getDogNumberTwo() {
 
-  // /dogs
+  return fetch('/dogs/2')
 
-//   const body = new URLSearchParams({
-//     name: "value",
-//     age: ''
-// });
-
-//   const options = {
-//     method: "POST",
-//     headers: { "Content-Type": 'url-form-encoded'},
-//     body: body,
-//   };
-
-//  fetch('/dogs', options)
 }
 
 export function postNewDog() {
-  // Your code here
+
+  // fetch(url, options)
+  const url = '/dogs';
+  const body = new URLSearchParams({name: 'little bear', age: 18});
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-type': "application/x-www-form-urlencoded"
+    },
+    body: body
+  }
+
+  return fetch(url, options);
 }
 
 export function postNewDogV2(name, age) {
