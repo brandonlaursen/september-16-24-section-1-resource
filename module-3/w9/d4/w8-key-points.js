@@ -72,6 +72,7 @@ request = {
 response = {
   headers: {
     "Content-Type": "text/html",
+    "Location": '/'
   },
   statusCode: 200,
   body: true,
@@ -125,7 +126,7 @@ request = {
 // * GET /resource/:id
 // * PUT /resource/:id
 // * PATCH /resource/:id
-// * DELETE /resource/:id/delete
+// * DELETE /resource/:id/delet
 
 
 
