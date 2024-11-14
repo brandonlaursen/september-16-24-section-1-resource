@@ -43,11 +43,17 @@ function3();
 
 /*
 
+POST /posts - Submit the creation of a new post
+
+GET /posts/:postId/edit A form for editing a specific post
+POST /posts/:postId - Submit the edit of an existing post
 
   /traditional
  GET /resource
  POST /resource/:id/edit
  POST /resource/:id/delete
+
+ GET /resource/new
 
 
   "application/json"
