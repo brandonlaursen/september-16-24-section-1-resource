@@ -1,0 +1,11 @@
+{
+  "programs": {
+    "BASE": {
+      "starter-exclusions": [
+        "answers-solution.json",
+        "generate-hashed-answers.js",
+        ".gitignore"
+      ]
+    }
+  }
+}

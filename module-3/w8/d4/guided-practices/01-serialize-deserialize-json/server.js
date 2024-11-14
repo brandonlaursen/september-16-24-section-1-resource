@@ -1,6 +1,7 @@
 const http = require("http");
 
 const server = http.createServer((req, res) => {
+  console.log('-----------------')
   console.log(`${req.method} ${req.url}`);
 
   let reqBody = "";
