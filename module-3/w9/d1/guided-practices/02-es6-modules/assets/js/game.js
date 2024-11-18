@@ -1,3 +1,11 @@
+
+
+
+import { getIndex, myFunc } from "./utilities.js";
+import { mrPotatoHeadQuotes } from "./quotes/mrPotatoHead.js";
+
+import mrsPotatoHeadQuotes from './quotes/mrsPotatoHead.js';
+
 class Game {
 
   start() {
@@ -39,3 +47,8 @@ class Game {
   }
 }
 
+export function sayHi(){
+  console.log('hello from say hi')
+}
+
+export default Game;
