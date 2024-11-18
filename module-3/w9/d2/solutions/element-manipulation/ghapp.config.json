@@ -1,0 +1,11 @@
+{
+  "programs": {
+    "BASE": {
+      "starter-exclusions": [
+        "index.html",
+        "my-profile.css",
+        "my-profile.js"
+      ]
+    }
+  }
+}
