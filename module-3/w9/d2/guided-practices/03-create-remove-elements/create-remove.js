@@ -43,30 +43,29 @@ add.addEventListener("click", async () => {
     // console.log("newFigCaption:", newFigCaption);
 
     // * append the img to the figure
-    newFigure.appendChild(newImg)
+    newFigure.appendChild(newImg);
     // * append the figcaption to the figure
-    newFigure.appendChild(newFigCaption)
+    newFigure.appendChild(newFigCaption);
     // console.log(newFigure)
 
     // * append the figureEle to the li
     newLi.appendChild(newFigure);
 
     // * query the ul element
-    const ul = document.querySelector('ul');
+    const ul = document.querySelector("ul");
     // console.log(ul);
 
     // * append the li to the ul
     ul.appendChild(newLi);
 
-    ul.innerHTML += `
-    <li>
-        <figure>
-            <img src="${url}"/>
-            <figcaption>${breed}</figcaption>
-        </figure>
-    </li>
-    `
-
+    // ul.innerHTML += `
+    // <li>
+    //     <figure>
+    //         <img src="${url}"/>
+    //         <figcaption>${breed}</figcaption>
+    //     </figure>
+    // </li>
+    // `
   } catch (e) {
     console.log("Couldn't fetch dog :(");
   }
@@ -75,17 +74,32 @@ add.addEventListener("click", async () => {
 /************************** REMOVE FIRST DOG BUTTON **************************/
 const removeFirst = document.getElementById("remove-first");
 removeFirst.addEventListener("click", () => {
-  /*-------------------- Select the first dog card --------------------- */
-  // Your code here
-  /*-------------------- Remove the first dog card --------------------- */
-  // Your code here
+  const allDogs = document.querySelectorAll("li");
+  // console.log("allDogs:", allDogs);
+
+  const firstDog = allDogs[0];
+
+  if(firstDog) {
+    firstDog.remove();
+  } else {
+    console.log('no dogs left!')
+  }
+
+
 });
 
 /************************** REMOVE LAST DOG BUTTON ***************************/
 const removeLast = document.getElementById("remove-last");
 removeLast.addEventListener("click", () => {
-  /*-------------------- Select the last dog card ----------------------- */
-  // Your code here
-  /*-------------------- Remove the last dog card ----------------------- */
-  // Your code here
+    const allDogs = document.querySelectorAll("li");
+    // console.log("allDogs:", allDogs);
+
+    const lastDog = allDogs[allDogs.length - 1];
+
+    if(lastDog) {
+      lastDog.remove();
+    } else {
+      console.log('no dogs left!')
+    }
+
 });
