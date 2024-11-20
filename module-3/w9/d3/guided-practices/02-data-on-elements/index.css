@@ -7,3 +7,42 @@ li {
 }
 
 /* Your code here */
+
+
+
+
+li[data-type='drinks'] {
+    background-color: aqua;
+}
+
+li[data-type='bakery'] {
+    background-color: red;
+}
+
+li[data-type='canned'] {
+    background-color: green
+}
+
+li[data-type='dairy'] {
+    background-color: yellow;
+}
+
+li[data-type='frozen'] {
+    background-color: grey;
+}
+
+li[data-type='meats'] {
+    background-color: purple
+}
+
+li[data-type='produce'] {
+    background-color: orange;
+}
+
+li[data-type='toiletries'] {
+    background-color: black
+}
+
+li[data-type='other'] {
+    background-color: pink;
+}
