@@ -1,10 +1,12 @@
 const express = require("express");
 const app = express();
 
+
 // First
 app.use("/", (req, res, next) => {
   console.log("First");
-  const error = new Error("First");
+  const error = new Error('error!!')
+
   next(error);
 });
 
