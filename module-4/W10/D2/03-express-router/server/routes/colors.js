@@ -2,7 +2,10 @@ const express = require('express');
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
+router.get("/", async(req, res) => {
+
+  const data = await fetch();
+  
   res.json("GET /colors");
 });
 
