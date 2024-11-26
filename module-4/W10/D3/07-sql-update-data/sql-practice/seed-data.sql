@@ -16,3 +16,6 @@ VALUES
 
 SELECT * FROM friends;
 
+UPDATE friends
+SET first_name = ''
+WHERE id = 5;
