@@ -35,9 +35,9 @@ On instruments.id = musician_instruments.instrument_id
 -- On instruments.id = musician_instruments.instrument_id
 
 
-SELECT musicians.first_name, instruments.type
-FROM musicians
-JOIN instruments
-ON musician_instruments.musician_id = musicians.id
-JOIN musician_instruments
-On instruments.id = musician_instruments.instrument_id
+-- SELECT musicians.first_name, instruments.type
+-- FROM musicians
+-- JOIN instruments
+-- ON musician_instruments.musician_id = musicians.id
+-- JOIN musician_instruments
+-- On instruments.id = musician_instruments.instrument_id
