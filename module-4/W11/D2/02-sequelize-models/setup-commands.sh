@@ -10,3 +10,13 @@ npm install
 
 # Create .env file to specify location of database
 cp .env.example .env
+
+
+
+
+# npx sequelize-cli model:generate --name <ModelName> --attributes <column1>:<type>,
+# <column2>:<type>,...
+
+
+
+# npx sequelize-cli model:generate --name Color --attributes name:string
