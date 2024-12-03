@@ -271,18 +271,6 @@ _You can add -cli to the sequelize command, but not needed_
 
 ---
 
-### Generate a migration
-
-`cd` into `server` directory
-
-#### Syntax
-
-- `npx sequelize-cli migration:generate --name <ModelName>`
-
-#### Example
-
-- `npx sequelize-cli migration:generate --name create-car`
-  _Table name is singular in this command, sequelize handles pluralization_
 
 ## Models
 
@@ -308,6 +296,21 @@ _You can add -cli to the sequelize command, but not needed_
 - Generates both the model and the migration files
 - Migration file name is based on the singular version of the model
 - ex: If model is Car, migration is create-car
+
+
+### Generate a migration
+
+`cd` into `server` directory
+
+#### Syntax
+
+- `npx sequelize-cli migration:generate --name <ModelName>`
+
+#### Example
+
+- `npx sequelize-cli migration:generate --name create-car`
+  _Table name is singular in this command, sequelize handles pluralization_
+
 
 ## Important notes
 
