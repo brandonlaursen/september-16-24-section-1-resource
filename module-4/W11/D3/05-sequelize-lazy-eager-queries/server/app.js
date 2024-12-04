@@ -14,6 +14,8 @@ app.use(express.json());
 // STEP 1: Example of lazy loading
 app.get('/bands-lazy/:id', async (req, res, next) => {
     const band = await Band.findByPk(req.params.id);
+
+
     const bandMembers = await Musician.findAll({
         order: [ ['firstName'] ],
         where: {
@@ -45,13 +47,13 @@ app.get('/bands-lazy', async (req, res, next) => {
     const payload = [];
     for(let i = 0; i < allBands.length; i++){
         const band = allBands[i];
-        // Your code here 
+        // Your code here
         const bandData = {
             id: band.id,
             name: band.name,
             createdAt: band.createdAt,
             updatedAt: band.updatedAt,
-            // Your code here 
+            // Your code here
         };
         payload.push(bandData);
     }
@@ -61,7 +63,9 @@ app.get('/bands-lazy', async (req, res, next) => {
 // STEP 3: Eager loading all bands
 app.get('/bands-eager', async (req, res, next) => {
     const payload = await Band.findAll({
-        // Your code here 
+
+        include: { model: Musician },
+        order: [ [Musician, 'firstName'] ]
     });
     res.json(payload);
 });
