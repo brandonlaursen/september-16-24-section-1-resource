@@ -1,16 +1,3 @@
-<style>
-    .present {
-        text-align: left;
-    }
-</style>
-
----
-
-###### tags: `Week 11` `W11D4`
-
----
-
-\*\* Share the Sequelize Reference Sheet on Slack at the beginning of class
 
 ---
 
