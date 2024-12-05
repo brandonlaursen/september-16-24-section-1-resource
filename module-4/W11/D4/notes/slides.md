@@ -20,12 +20,6 @@ Built in association methods and aggregate queries
   - 3. many to many (join table time)
 - Eager vs lazy loading
 
----
-
-# Talk about dev.db & github...
-
----
-
 ## Association Methods
 
 Once we have an instance provided by a query in Sequelize, we are provided with a series of built in methods that allow us to easily make additional queries.
